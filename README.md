@@ -11,7 +11,7 @@
 - 阶段四共保存 65 次真实运行（含基线实验、失败与重跑）。不能把重跑后的通过率当作稳定性指标。
 - 同一组 6 个问题、同模型同提示下，检索基线自动检查通过 5/6，改进版 6/6；工具调用合计 24→14。固定查询的 11 组开发样例 Recall@5 为 0→1，基线仅为整句字面匹配，不能代表对成熟搜索系统的提升。
 
-评审先看 [完整验收报告](examples/stage4/README.md)、[评估方法](docs/03-evaluation.md)和[结果索引](examples/stage4/verification.json)。复核者为 Codex AI，不能记作候选人独立验收。
+评审先看 [完整验收报告](examples/stage4/README.md)、[评估方法](docs/03-evaluation.md)和[结果索引](examples/stage4/verification.json)。
 
 ## 安装
 
