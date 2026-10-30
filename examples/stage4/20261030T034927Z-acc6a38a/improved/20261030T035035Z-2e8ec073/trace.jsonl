@@ -1,0 +1,5 @@
+{"step": 1, "event": "action", "model_turn": 1, "action": "search_docs", "arguments": {"query": "不存在的制度甲", "top_k": 5}, "reason": "离线预算工程测试。", "provider": {}}
+{"step": 2, "event": "observation", "model_turn": 1, "tool_call": 1, "tool": "search_docs", "summary": "工具成功", "observation": {"ok": true, "data": {"hits": [], "total_hits": 0, "truncated": false, "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"}, "error": null}}
+{"step": 3, "event": "action", "model_turn": 2, "action": "search_docs", "arguments": {"query": "不存在的制度乙", "top_k": 5}, "reason": "离线预算工程测试。", "provider": {}}
+{"step": 4, "event": "observation", "model_turn": 2, "tool_call": 2, "tool": "search_docs", "summary": "工具成功", "observation": {"ok": true, "data": {"hits": [], "total_hits": 0, "truncated": false, "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"}, "error": null}}
+{"step": 5, "event": "completed", "status": "incomplete", "model_turns": 2, "tool_calls": 2, "error": {"source": "executor", "code": "BUDGET_EXHAUSTED"}}

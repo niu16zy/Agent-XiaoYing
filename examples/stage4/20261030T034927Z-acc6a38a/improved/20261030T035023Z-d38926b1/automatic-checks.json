@@ -1,0 +1,112 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "needs_clarification",
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      },
+      {
+        "doc_id": "D02",
+        "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "新增 D02 后从明确回答转为冲突处理",
+      "对比 T01 与本次 Trace 的实际动作变化",
+      "不得只修改回答措辞而继续选定单一期限"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "read_document",
+    "ask_user"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      }
+    },
+    {
+      "action": "ask_user",
+      "arguments": {
+        "answer": "本次已读的两份制度对报销期限给出不同规定，且都写明“自费用发生之日起计算”：\n1)《费用报销提交规则》（2026-01-10）：报销期限为 30 个自然日。\n2)《费用报销办理说明》（2026-03-15）：报销期限为 15 个自然日。\n两份原文都未写明适用范围，也未声明废止或替代另一份，因此无法确定哪一份适用，不能仅凭日期较新就选择 15 个自然日。请确认适用哪份制度。",
+        "status": "needs_clarification",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+            "supports": "《费用报销提交规则》规定的报销期限为30个自然日。"
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-03-15",
+            "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+            "supports": "《费用报销办理说明》规定的报销期限为15个自然日。"
+          }
+        ],
+        "conflicts": [
+          {
+            "conflict_id": "C-1891351497",
+            "topic": "报销期限为30个自然日还是15个自然日",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                "supports": "30个自然日一方。"
+              },
+              {
+                "doc_id": "D02",
+                "version_date": "2026-03-15",
+                "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+                "supports": "15个自然日一方。"
+              }
+            ],
+            "status": "unresolved",
+            "resolution": null
+          }
+        ],
+        "gaps": [
+          "两份制度均未写明适用范围及是否存在替代/废止关系，无法确定应适用哪一份的报销期限"
+        ],
+        "follow_up_question": "请问贵公司当前适用《费用报销提交规则》还是《费用报销办理说明》？或该报销事项属于哪个适用范围？"
+      }
+    }
+  ],
+  "status": "needs_clarification",
+  "model_turns": 4,
+  "tool_calls": 3
+}

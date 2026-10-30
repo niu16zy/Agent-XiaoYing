@@ -1,0 +1,19 @@
+{
+  "case_id": "T06B",
+  "run_id": "20261029T144708Z-50590a8d",
+  "status": "incomplete",
+  "model_turns": 8,
+  "tool_calls": 4,
+  "citation_provenance": "passed",
+  "semantic_review": "failed",
+  "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+  "note": "首轮T06B多次格式错误，预算耗尽为incomplete，未达到tool_error目标；已修复后重跑。",
+  "actions": [
+    "search_docs",
+    "read_document",
+    "search_docs",
+    "read_document"
+  ],
+  "invalid_responses": 4,
+  "tool_failures": 2
+}

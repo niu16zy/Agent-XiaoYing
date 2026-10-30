@@ -1,0 +1,113 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "30 个自然日",
+      "自费用发生之日起计算"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "每个改写问题独立运行",
+      "首次检索不足时允许模型改写查询",
+      "不要求固定动作顺序"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "finish",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用发生后最迟多久在系统申请报账 时限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "最迟 30 个自然日。报销期限为 30 个自然日，自费用发生之日起计算，员工应在该期限内通过费用系统提交报销申请。\n\n另需注意：申请若被退回，应按退回说明补充材料后重新提交；材料需通过费用系统上传且图像清晰、可识别交易日期和金额。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+            "supports": "报账申请最长期限为30个自然日，自费用发生之日起计算"
+          },
+          {
+            "doc_id": "D04",
+            "version_date": "2026-02-05",
+            "quote": "申请被退回时，应按退回说明补充材料后重新提交。",
+            "supports": "被退回后的重新提交要求"
+          },
+          {
+            "doc_id": "D03",
+            "version_date": "2026-02-01",
+            "quote": "材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+            "supports": "报销材料上传方式与清晰度要求"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "最迟 30 个自然日。报销期限为 30 个自然日，自费用发生之日起计算，员工应在该期限内通过费用系统提交报销申请。\n\n报销申请应填写费用发生日期、用途和金额；提交成功后可在费用系统查看处理状态。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+            "supports": "报账申请最长期限为30个自然日，自费用发生之日起计算"
+          },
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销申请应填写费用发生日期、用途和金额。",
+            "supports": "报销申请需填写的信息"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "answered",
+  "model_turns": 4,
+  "tool_calls": 2
+}

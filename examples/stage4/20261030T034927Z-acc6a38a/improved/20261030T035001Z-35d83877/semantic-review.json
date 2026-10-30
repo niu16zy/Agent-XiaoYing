@@ -1,0 +1,12 @@
+{
+  "reviewer": "Codex AI; not independent candidate review",
+  "case_id": "T05",
+  "run_id": "20261030T035001Z-35d83877",
+  "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035001Z-35d83877",
+  "mode": "real",
+  "status": "answered",
+  "automatic_pass": true,
+  "semantic_review": "pass",
+  "review_note": "用历史识别报销主题，重新读取D03，保留出差申请仅适用于出差费用的条件。",
+  "output_sha256": "2b4fe9633819628ab438217c328f6694d8d67585bb6c2b1c365b1587003f87f6"
+}

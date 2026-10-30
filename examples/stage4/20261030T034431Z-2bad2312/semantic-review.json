@@ -1,0 +1,21 @@
+{
+  "reviewer": "Codex AI",
+  "batch_accepted": false,
+  "findings": [
+    {
+      "case_id": "T09",
+      "result": "fail",
+      "reason": "工具6次耗尽后incomplete，未达到资料不足目标；提示补充提前收尾，未提高上限。"
+    },
+    {
+      "case_id": "T06B",
+      "result": "fail",
+      "reason": "尽管声明未经核实，仍在answer转述摘要候选天数，应删除。"
+    },
+    {
+      "case_id": "T02",
+      "result": "needs_citation_improvement",
+      "reason": "附加系统提交描述未包含在最终期限引文中。"
+    }
+  ]
+}

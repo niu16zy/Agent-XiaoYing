@@ -1,0 +1,12 @@
+{
+  "mode": "real",
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "request_parameters": {
+    "response_format": "json_object",
+    "max_tokens": 8192,
+    "thinking": "enabled",
+    "reasoning_effort": "high",
+    "sdk_max_retries": 0
+  }
+}

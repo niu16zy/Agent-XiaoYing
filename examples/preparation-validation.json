@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-29",
+  "kind": "preparation_static_validation",
+  "status": "passed",
+  "document_count": 12,
+  "scenario_count": 6,
+  "case_count": 14,
+  "planned_input_count": 16,
+  "checked_evidence_quotes": 12,
+  "checked_markdown_links": 7,
+  "checks": [
+    "JSON parsing",
+    "Unique document, scenario and case IDs",
+    "Required document fields and date format",
+    "Scenario document references and overrides",
+    "Baseline/conflict isolation",
+    "Content replacement and evidence deletion",
+    "Expected quotations match scenario-specific original content",
+    "Comparison and supersedes references",
+    "Markdown link targets exist"
+  ],
+  "agent_tests_executed": false,
+  "real_model_runs": 0,
+  "limitation": "Only static preparation checks; no retrieval, Agent behavior or real-model performance verified."
+}

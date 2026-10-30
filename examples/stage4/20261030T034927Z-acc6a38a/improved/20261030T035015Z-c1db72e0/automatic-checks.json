@@ -1,0 +1,66 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true,
+    "fault_observed": true,
+    "model_decision_after_failure": true,
+    "failure_not_model_api": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "safe_stop",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "tool_error",
+    "required_evidence": [],
+    "constraints": [
+      "说明原文读取失败，无法核实期限",
+      "不得将检索摘要当作成功读取的引文",
+      "不得继续无界重试；耗尽预算则另记为预算停止而非本用例目标通过"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "由于对于记载报销期限的关键制度文档的读取操作失败（该工具返回了不可恢复的错误），本次无法核实报销期限的具体规则。",
+        "status": "tool_error",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "缺少成功读取的报销期限制度原文",
+          "无法确认报销期限的天数、起算点及适用条件"
+        ],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "tool_error",
+  "model_turns": 3,
+  "tool_calls": 2
+}

@@ -1,0 +1,89 @@
+{
+  "checks": {
+    "status": false,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": false
+  },
+  "automatic_pass": false,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "30 个自然日",
+      "自费用发生之日起计算"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "每个改写问题独立运行",
+      "首次检索不足时允许模型改写查询",
+      "不要求固定动作顺序"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销 系统 申请报账 最迟期限 费用发生",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销时限",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报账",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用 报销 流程",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "本次已读资料中未检索到任何关于报账时限的制度原文，因此无法确认费用发生后最迟多久需在系统里申请报账。",
+        "status": "insufficient_evidence",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "缺少费用报销制度原文（报账申请时限及起算点、按自然日或工作日计算等规定）",
+          "四次不同关键词检索均返回 0 条命中，知识库中未见相关文档"
+        ],
+        "follow_up_question": "您是否知道该规定所在的制度名称或文档编号？提供后我可再针对性检索。"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 5,
+  "tool_calls": 4
+}

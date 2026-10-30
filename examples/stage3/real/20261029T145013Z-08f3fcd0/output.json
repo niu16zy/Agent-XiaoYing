@@ -1,0 +1,77 @@
+{
+  "answer": "报销需准备的材料分通用与专项两部分：\n\n一、通用材料（所有费用报销）：\n1. 发票；\n2. 支付凭证；\n3. 费用用途说明。\n材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。\n\n二、出差相关费用：在通用材料之外，还须附上已审批的出差申请。\n\n三、住宿费专项材料（按出差地点区分）：\n- 中国大陆境内出差住宿：须提供住宿发票和入住明细（该标准适用于境内出差，不适用于境外）；\n- 境外出差住宿：须提供住宿凭证和入住明细（该标准适用于境外出差，不适用于境内）。\n\n四、若申请被退回，应按退回说明补充材料后重新提交。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "version_date": "2026-02-01",
+      "quote": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。",
+      "supports": "通用报销材料及出差附加材料",
+      "start": 0,
+      "end": 46,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D03",
+      "version_date": "2026-02-01",
+      "quote": "材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+      "supports": "材料上传方式与图像清晰度要求",
+      "start": 48,
+      "end": 77,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D05",
+      "version_date": "2026-04-01",
+      "quote": "申请住宿费报销须提供住宿发票和入住明细。",
+      "supports": "境内出差住宿费专项材料",
+      "start": 54,
+      "end": 74,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D05",
+      "version_date": "2026-04-01",
+      "quote": "本标准适用于中国大陆境内出差，不适用于境外出差。",
+      "supports": "境内住宿标准的适用条件",
+      "start": 0,
+      "end": 24,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D06",
+      "version_date": "2026-04-01",
+      "quote": "申请住宿费报销须提供住宿凭证和入住明细。",
+      "supports": "境外出差住宿费专项材料",
+      "start": 54,
+      "end": 74,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D06",
+      "version_date": "2026-04-01",
+      "quote": "本标准适用于境外出差，不适用于中国大陆境内出差。",
+      "supports": "境外住宿标准的适用条件",
+      "start": 0,
+      "end": 24,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D04",
+      "version_date": "2026-02-05",
+      "quote": "申请被退回时，应按退回说明补充材料后重新提交。",
+      "supports": "被退回时补充材料的要求",
+      "start": 56,
+      "end": 79,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "follow_up_question": null,
+  "run_id": "20261029T145013Z-08f3fcd0",
+  "mode": "real",
+  "model_turns": 7,
+  "tool_calls": 5,
+  "elapsed_seconds": 14.437
+}

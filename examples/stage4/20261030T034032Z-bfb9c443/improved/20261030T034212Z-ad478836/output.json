@@ -1,0 +1,32 @@
+{
+  "answer": "云剪工作台网页版单个上传文件大小不得超过 500 MB；支持的视频格式为 MP4、MOV。如果文件超过限制，需压缩文件或拆分视频后再上传。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D07",
+      "version_date": "2026-05-10",
+      "quote": "云剪工作台网页版支持上传 MP4、MOV 格式视频。单个上传文件大小不得超过 500 MB。",
+      "supports": "明确网页版支持的上传格式及单个文件最大 500 MB 的限制。",
+      "start": 0,
+      "end": 46,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D07",
+      "version_date": "2026-05-10",
+      "quote": "如果文件超过限制，请压缩文件或拆分视频后再上传。",
+      "supports": "说明超出大小限制时的处理方式。",
+      "start": 48,
+      "end": 72,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "follow_up_question": null,
+  "run_id": "20261030T034212Z-ad478836",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 3.0
+}

@@ -1,0 +1,20 @@
+{
+  "case_id": "T09",
+  "run_id": "20261029T144727Z-68426c9c",
+  "status": "insufficient_evidence",
+  "model_turns": 7,
+  "tool_calls": 4,
+  "citation_provenance": "passed",
+  "semantic_review": "passed",
+  "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+  "note": "删除期限依据后明确资料不足，不复用30天答案。",
+  "actions": [
+    "search_docs",
+    "read_document",
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "invalid_responses": 2,
+  "tool_failures": 0
+}

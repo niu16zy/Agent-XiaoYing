@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "needs_clarification",
+    "required_facts": [
+      "D01 为 30 个自然日",
+      "D02 为 15 个自然日",
+      "现有资料无法确认适用范围或优先关系"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      },
+      {
+        "doc_id": "D02",
+        "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "请求确认适用制度",
+      "不得以版本更新或期限更短为由选定 D02",
+      "Trace 应体现读取双方依据及冲突查证；没有补充资料则如实说明"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "read_document",
+    "search_docs",
+    "ask_user"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "制度适用 优先 冲突 报销规则效力",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "ask_user",
+      "arguments": {
+        "answer": "本次已读资料对报销期限存在两条互斥规定，且两份原文均写明自费用发生之日起按自然日计算，但未写明各自的适用范围、优先依据或替代条款，无法确定应适用哪一条：\n1）《费用报销提交规则》（2026-01-10）：报销期限为 30 个自然日，自费用发生之日起计算。\n2）《费用报销办理说明》（2026-03-15）：报销期限为 15 个自然日，自费用发生之日起计算。\n不能仅因后者日期更新即认定其替代前者。请确认贵公司实际适用哪一份制度，我再给出确定结论。",
+        "status": "needs_clarification",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+            "supports": "一条规则规定30个自然日，自费用发生之日起算。"
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-03-15",
+            "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+            "supports": "另一条规则规定15个自然日，自费用发生之日起算，与前者互斥。"
+          }
+        ],
+        "conflicts": [
+          {
+            "conflict_id": "C-1891351497",
+            "topic": "报销提交期限：30个自然日 与 15个自然日",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                "supports": "30个自然日规则。"
+              },
+              {
+                "doc_id": "D02",
+                "version_date": "2026-03-15",
+                "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+                "supports": "15个自然日规则。"
+              }
+            ],
+            "status": "unresolved",
+            "resolution": null
+          }
+        ],
+        "gaps": [
+          "两份制度均未写明适用范围、优先依据或替代条款，无法判定适用哪一条"
+        ],
+        "follow_up_question": "请问贵公司实际执行的是《费用报销提交规则》的30个自然日，还是《费用报销办理说明》的15个自然日？或请提供说明两者适用范围/优先关系的文件。"
+      }
+    }
+  ],
+  "status": "needs_clarification",
+  "model_turns": 5,
+  "tool_calls": 4
+}

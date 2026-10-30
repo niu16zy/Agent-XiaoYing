@@ -1,0 +1,129 @@
+{
+  "batch": "examples\\stage4\\20261030T034927Z-acc6a38a",
+  "same_model": "deepseek-flash",
+  "same_prompt": true,
+  "same_limits": true,
+  "same_question_and_scenario": true,
+  "only_changed_setting": "retrieval_mode",
+  "summary": {
+    "baseline": {
+      "runs": 6,
+      "automatic_passes": 5,
+      "tool_calls_total": 24,
+      "model_turns_total": 30
+    },
+    "improved": {
+      "runs": 6,
+      "automatic_passes": 6,
+      "tool_calls_total": 14,
+      "model_turns_total": 20
+    }
+  },
+  "pairs": [
+    {
+      "case_id": "T01",
+      "baseline_run": "20261030T035053Z-085c3b60",
+      "improved_run": "20261030T034930Z-907c44b6",
+      "baseline_actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "improved_actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    },
+    {
+      "case_id": "T02",
+      "baseline_run": "20261030T035057Z-15306fef",
+      "improved_run": "20261030T034934Z-13aa0891",
+      "baseline_actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ],
+      "improved_actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "search_docs",
+        "ask_user"
+      ]
+    },
+    {
+      "case_id": "T04",
+      "baseline_run": "20261030T035105Z-7572c7de",
+      "improved_run": "20261030T034949Z-72aa0f25",
+      "baseline_actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "finish"
+      ],
+      "improved_actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    },
+    {
+      "case_id": "T04-v1",
+      "baseline_run": "20261030T035112Z-2f75fdbb",
+      "improved_run": "20261030T034953Z-fb111a92",
+      "baseline_actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "improved_actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    },
+    {
+      "case_id": "T04-v2",
+      "baseline_run": "20261030T035121Z-87424004",
+      "improved_run": "20261030T034957Z-9c792977",
+      "baseline_actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "improved_actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    },
+    {
+      "case_id": "T13",
+      "baseline_run": "20261030T035127Z-c63f371c",
+      "improved_run": "20261030T035047Z-586dc4e7",
+      "baseline_actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "improved_actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    }
+  ],
+  "limitations": "Six synthetic development questions, one run each, sequential and stochastic. Automatic acceptance only; semantic review separate. Not a statistical stability claim."
+}

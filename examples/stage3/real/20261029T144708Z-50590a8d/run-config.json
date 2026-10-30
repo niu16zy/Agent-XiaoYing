@@ -1,0 +1,13 @@
+{
+  "case_id": "T06B",
+  "scenario": "baseline",
+  "fault": {
+    "tool": "read_document",
+    "match_args": {
+      "doc_id": "D01"
+    },
+    "mode": "all_matching_calls",
+    "error_code": "TOOL_UNAVAILABLE",
+    "retryable": false
+  }
+}

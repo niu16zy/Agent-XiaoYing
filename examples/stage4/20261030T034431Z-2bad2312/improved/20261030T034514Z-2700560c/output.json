@@ -1,0 +1,25 @@
+{
+  "answer": "报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内通过费用系统提交报销申请。原文未进一步说明截止时刻或以哪一天为起算日等计算边界。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "version_date": "2026-01-10",
+      "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+      "supports": "报账申请的最长期限、时间单位为自然日、起算点为费用发生之日，且须通过费用系统提交。",
+      "start": 0,
+      "end": 46,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [
+    "原文未规定具体截止时刻及起算日的边界处理（如费用发生当日是否计入）。"
+  ],
+  "follow_up_question": null,
+  "run_id": "20261030T034514Z-2700560c",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 4.25
+}

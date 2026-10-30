@@ -1,0 +1,65 @@
+{
+  "mode": "offline",
+  "rows": [
+    {
+      "case_id": "T10",
+      "run_id": "20261030T034727Z-6f9507b9",
+      "mode": "mock",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/offline-verification/20261030T034727Z-afa33a2c/improved/20261030T034727Z-6f9507b9",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true,
+        "budget_stop": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "not_applicable_mock",
+      "review_requirements": {
+        "status": "incomplete",
+        "required_evidence": [],
+        "constraints": [
+          "不发起第三轮模型调用或第三次工具调用",
+          "明确说明预算耗尽",
+          "只证明工程上限，不证明真实模型决策效果"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "不存在的制度甲",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "不存在的制度乙",
+            "top_k": 5
+          }
+        }
+      ],
+      "status": "incomplete",
+      "model_turns": 2,
+      "tool_calls": 2
+    }
+  ],
+  "complete": true,
+  "started_at": "2026-10-30T03:47:27.764944+00:00",
+  "finished_at": "2026-10-30T03:47:27.989468+00:00",
+  "semantic_review": "not_applicable_mock"
+}

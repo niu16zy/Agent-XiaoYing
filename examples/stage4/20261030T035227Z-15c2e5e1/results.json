@@ -1,0 +1,194 @@
+{
+  "mode": "real",
+  "rows": [
+    {
+      "case_id": "T06B",
+      "run_id": "20261030T035230Z-0e25b25e",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T035227Z-15c2e5e1/improved/20261030T035230Z-0e25b25e",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true,
+        "fault_observed": true,
+        "model_decision_after_failure": true,
+        "failure_not_model_api": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "safe_stop",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "tool_error",
+        "required_evidence": [],
+        "constraints": [
+          "说明原文读取失败，无法核实期限",
+          "不得将检索摘要当作成功读取的引文",
+          "不得继续无界重试；耗尽预算则另记为预算停止而非本用例目标通过"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "无法核实报销期限：制度原文读取工具返回不可恢复错误（TOOL_UNAVAILABLE），本次未能成功读取相关规定原文，因此不能给出报销期限的具体天数、起算点或适用条件。",
+            "status": "tool_error",
+            "citations": [],
+            "conflicts": [],
+            "gaps": [
+              "缺少成功读取的报销期限制度原文（doc_id D01 读取失败，错误不可恢复）",
+              "报销期限的天数、起算点及适用条件均未获得可引用原文"
+            ],
+            "follow_up_question": "是否需要稍后重试检索/读取该制度，或由您提供制度原文？"
+          }
+        }
+      ],
+      "status": "tool_error",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T09",
+      "run_id": "20261030T035235Z-03970ba3",
+      "mode": "real",
+      "snapshot_id": "d03ee2820a1f2928b52c0d8182fa961f8dfd0ba522a6b31b2488f984bc3effe5",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T035227Z-15c2e5e1/improved/20261030T035235Z-03970ba3",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "insufficient_evidence",
+        "required_evidence": [],
+        "constraints": [
+          "说明资料缺少期限条款",
+          "不得回答 30、15 或 45 天",
+          "相关流程资料不能作为期限证据"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "search_docs",
+        "finish",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用发生之日起 报销 提交",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销申请 逾期 天数 期限 规定",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "本次已读的《费用报销提交规则》（2026-01-10）全文只说明员工需通过费用系统提交报销申请、填写费用发生日期、用途和金额，并可查看处理状态，未规定任何报销提交期限（多少天或按什么起算）。因此报销期限暂无法核实。检索结果中另有材料清单、住宿标准等文档摘要显示“不规定报销提交期限”，但这些仅为检索摘要，本次未读取其原文，故不作为结论依据。",
+            "status": "insufficient_evidence",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+                "supports": "该制度全文未载明报销提交期限，无法据此回答具体期限。"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [
+              "缺少明确规定报销提交期限（天数及起算点）的制度原文",
+              "检索到的相关文档摘要仅称不规定提交期限，未读取原文核实"
+            ],
+            "follow_up_question": "是否存在专门规定报销时限的制度或补充通知？如有，请提供文档名称或所在系统位置，以便核实。"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "本次已读的《费用报销提交规则》（2026-01-10）全文只说明员工通过费用系统提交报销申请、填写费用发生日期、用途和金额，并可查看处理状态，未规定报销提交期限的具体天数或起算点，因此暂无法核实报销期限。",
+            "status": "insufficient_evidence",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+                "supports": "该制度全文未载明报销提交期限，无法据此回答具体期限。"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [
+              "缺少明确规定报销提交期限（天数及起算点）的制度原文"
+            ],
+            "follow_up_question": "是否存在专门规定报销时限的制度或补充通知？如有，请提供文档名称或所在系统位置，以便核实。"
+          }
+        }
+      ],
+      "status": "insufficient_evidence",
+      "model_turns": 7,
+      "tool_calls": 4
+    }
+  ],
+  "complete": true,
+  "started_at": "2026-10-30T03:52:27.876818+00:00",
+  "finished_at": "2026-10-30T03:52:46.263713+00:00",
+  "semantic_review": "pending"
+}

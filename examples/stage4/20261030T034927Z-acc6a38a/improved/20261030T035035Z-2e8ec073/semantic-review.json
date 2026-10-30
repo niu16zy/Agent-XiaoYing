@@ -1,0 +1,12 @@
+{
+  "reviewer": "Codex AI; not independent candidate review",
+  "case_id": "T10",
+  "run_id": "20261030T035035Z-2e8ec073",
+  "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035035Z-2e8ec073",
+  "mode": "mock",
+  "status": "incomplete",
+  "automatic_pass": true,
+  "semantic_review": "not_applicable_mock",
+  "review_note": "Mock只证明2轮2工具上限，明确incomplete，不作为真实语义证据。",
+  "output_sha256": "da86855d78ca57c65f013e512a8b277183078e56da88ed07402b1d8cd4630d3c"
+}

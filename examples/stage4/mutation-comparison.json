@@ -1,0 +1,87 @@
+[
+  {
+    "baseline": "T01",
+    "changed": "T07",
+    "baseline_run": "20261030T034930Z-907c44b6",
+    "changed_run": "20261030T035019Z-c32315dc",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "answered"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pass",
+    "review_note": "同ID同日期的D01正文换成45，快照与答案一起改变，不复用30。"
+  },
+  {
+    "baseline": "T01",
+    "changed": "T08",
+    "baseline_run": "20261030T034930Z-907c44b6",
+    "changed_run": "20261030T035023Z-d38926b1",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "needs_clarification"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pass",
+    "review_note": "同问题新增D02后读取双方并追问，最终状态从answered变needs_clarification。"
+  },
+  {
+    "baseline": "T01",
+    "changed": "T09",
+    "baseline_run": "20261030T034930Z-907c44b6",
+    "changed_run": "20261030T035235Z-03970ba3",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "insufficient_evidence"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "search_docs",
+        "finish",
+        "finish"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pass",
+    "review_note": "D01删除期限后只说明资料不足，引用替换后的全文，不复用30/15/45；最新补验不再转述摘要。"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "answer": "本次已读资料中未检索到关于云剪工作台网页版单个视频上传大小上限的说明，无法确认具体数值。",
+  "status": "insufficient_evidence",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "缺少云剪工作台网页版上传视频大小限制的制度或产品说明原文",
+    "三次不同关键词检索均无命中，未获得可读取的文档"
+  ],
+  "follow_up_question": "请问您能否提供该限制所属的产品文档名称或版本，以便进一步查证？",
+  "run_id": "20261030T034715Z-3f7445f5",
+  "mode": "real",
+  "model_turns": 4,
+  "tool_calls": 3,
+  "elapsed_seconds": 3.984
+}

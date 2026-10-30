@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-29",
+  "stage": "2",
+  "implementation": "complete",
+  "real_model_acceptance": "passed",
+  "tests": {
+    "tests": "72",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "source": "examples/stage2/deepseek-tests.xml"
+  },
+  "records": [
+    {
+      "path": "examples/stage2/mock/20261029T095626Z-fe165abd/output.json",
+      "mode": "mock",
+      "status": "incomplete",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "error": null
+    },
+    {
+      "path": "examples/stage2/mock/20261029T095627Z-4f7e95dc/output.json",
+      "mode": "mock",
+      "status": "incomplete",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "error": null
+    },
+    {
+      "path": "examples/stage2/mock/20261029T095627Z-86c9487f/output.json",
+      "mode": "mock",
+      "status": "tool_error",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "error": {
+        "source": "business_tool",
+        "code": "UNRESOLVED_TOOL_FAILURE"
+      }
+    },
+    {
+      "path": "examples/stage2/mock/20261029T095628Z-750e5f38/output.json",
+      "mode": "mock",
+      "status": "incomplete",
+      "model_turns": 1,
+      "tool_calls": 1,
+      "error": {
+        "source": "executor",
+        "code": "BUDGET_EXHAUSTED"
+      }
+    },
+    {
+      "path": "examples/stage2/real/20261029T095334Z-70e3adbc/output.json",
+      "mode": "real",
+      "status": "tool_error",
+      "model_turns": 1,
+      "tool_calls": 0,
+      "error": {
+        "source": "model",
+        "code": "MODEL_REQUEST_FAILED"
+      }
+    },
+    {
+      "path": "examples/stage2/real/20261029T095419Z-f8b55dc0/output.json",
+      "mode": "real",
+      "status": "tool_error",
+      "model_turns": 1,
+      "tool_calls": 0,
+      "error": {
+        "source": "model",
+        "code": "MODEL_HTTP_401"
+      }
+    },
+    {
+      "path": "examples/stage2/real/20261029T103636Z-2bceb989/output.json",
+      "mode": "real",
+      "status": "tool_error",
+      "model_turns": 1,
+      "tool_calls": 0,
+      "error": {
+        "source": "model",
+        "code": "MODEL_REQUEST_FAILED"
+      }
+    },
+    {
+      "path": "examples/stage2/real/20261029T103701Z-c20e6b38/output.json",
+      "mode": "real",
+      "status": "needs_clarification",
+      "model_turns": 4,
+      "tool_calls": 3,
+      "error": null
+    },
+    {
+      "path": "examples/stage2/real/20261029T103731Z-9a3b1a50/output.json",
+      "mode": "real",
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "error": null
+    },
+    {
+      "path": "examples/stage2/real/20261029T143416Z-56eae51d/output.json",
+      "mode": "real",
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "error": null
+    },
+    {
+      "path": "examples/stage2/real/20261029T143544Z-792bacff/output.json",
+      "mode": "real",
+      "status": "needs_clarification",
+      "model_turns": 6,
+      "tool_calls": 3,
+      "error": null
+    }
+  ],
+  "configured_secret_scan": "passed",
+  "successful_real_model_loops": 2,
+  "real_acceptance_report": "examples/stage2/real-acceptance.json"
+}

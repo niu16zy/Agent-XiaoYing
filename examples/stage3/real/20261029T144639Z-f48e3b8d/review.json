@@ -1,0 +1,18 @@
+{
+  "case_id": "T04",
+  "run_id": "20261029T144639Z-f48e3b8d",
+  "status": "answered",
+  "model_turns": 4,
+  "tool_calls": 2,
+  "citation_provenance": "passed",
+  "semantic_review": "passed",
+  "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+  "note": "主改写输入召回D01并回答30个自然日；两个额外改写待阶段四。",
+  "actions": [
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "invalid_responses": 1,
+  "tool_failures": 0
+}

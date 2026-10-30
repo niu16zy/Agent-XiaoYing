@@ -1,0 +1,92 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true,
+    "fault_observed": true,
+    "model_decision_after_failure": true,
+    "failure_not_model_api": true,
+    "recovered_read": true,
+    "recovered_citation": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "recovered",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status_in": [
+      "answered",
+      "tool_error"
+    ],
+    "required_evidence": [],
+    "constraints": [
+      "Trace 包含失败观察及模型后续选择",
+      "若回答成功，必须先成功重读 D01 且引用原文；事实应为 30 个自然日",
+      "若停止，说明读取失败及未核实的缺口",
+      "不能把执行器固定重试算作模型决策",
+      "安全停止与恢复成功分别统计"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "read_document",
+    "search_docs",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销提交时限 工作日 自然日 逾期",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "费用报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内通过费用系统提交报销申请。该规则未区分工作日或设置其他例外。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+            "supports": "报销期限长度、起算点与提交方式"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "answered",
+  "model_turns": 5,
+  "tool_calls": 4
+}

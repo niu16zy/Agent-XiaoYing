@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "execution_status": "not_run",
+  "cases": [
+    {
+      "case_id": "T01",
+      "category": "明确答案",
+      "scenario_id": "baseline",
+      "question": "报销期限多久？",
+      "history": [],
+      "expected": {
+        "status": "answered",
+        "required_facts": ["30 个自然日", "自费用发生之日起计算"],
+        "required_evidence": [{"doc_id": "D01", "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"}],
+        "constraints": ["不得引用当前场景不可见的 D02", "正式引用必须来自本次成功读取"]
+      }
+    },
+    {
+      "case_id": "T02",
+      "category": "文档冲突",
+      "scenario_id": "conflict",
+      "question": "报销期限多久？",
+      "history": [],
+      "expected": {
+        "status": "needs_clarification",
+        "required_facts": ["D01 为 30 个自然日", "D02 为 15 个自然日", "现有资料无法确认适用范围或优先关系"],
+        "required_evidence": [
+          {"doc_id": "D01", "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"},
+          {"doc_id": "D02", "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"}
+        ],
+        "constraints": ["请求确认适用制度", "不得以版本更新或期限更短为由选定 D02", "Trace 应体现读取双方依据及冲突查证；没有补充资料则如实说明"]
+      }
+    },
+    {
+      "case_id": "T03",
+      "category": "资料外问题",
+      "scenario_id": "baseline",
+      "question": "公司规定育儿假有多少天？",
+      "history": [],
+      "expected": {
+        "status": "insufficient_evidence",
+        "required_facts": ["现有资料未规定育儿假天数"],
+        "required_evidence": [],
+        "constraints": ["不得用常识或外部法规推定本公司天数", "如引用 D10，必须说明它只提供流程，不支持具体天数"]
+      }
+    },
+    {
+      "case_id": "T04",
+      "category": "改写后的相似问题",
+      "scenario_id": "baseline",
+      "question": "费用发生以后，最迟多久要在系统里申请报账？",
+      "question_variants": ["报销申请最晚几天内提交？", "花完这笔钱后，有多少天可以提交费用报销？"],
+      "history": [],
+      "expected": {
+        "status": "answered",
+        "required_facts": ["30 个自然日", "自费用发生之日起计算"],
+        "required_evidence": [{"doc_id": "D01", "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"}],
+        "constraints": ["每个改写问题独立运行", "首次检索不足时允许模型改写查询", "不要求固定动作顺序"]
+      }
+    },
+    {
+      "case_id": "T05",
+      "category": "上下文追问",
+      "scenario_id": "baseline",
+      "question": "那需要准备哪些材料？",
+      "history": [
+        {"role": "user", "content": "报销期限多久？"},
+        {"role": "assistant", "content": "依据 D01，报销期限为自费用发生之日起 30 个自然日。"}
+      ],
+      "expected": {
+        "status": "answered",
+        "required_facts": ["发票", "支付凭证", "费用用途说明", "出差费用还须已审批的出差申请"],
+        "required_evidence": [{"doc_id": "D03", "quote": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。"}],
+        "constraints": ["识别报销主题并读取 D03", "不得把出差申请描述为所有报销都必须提供", "历史是合成测试输入，不是真实运行记录"]
+      }
+    },
+    {
+      "case_id": "T06A",
+      "category": "临时工具失败",
+      "scenario_id": "baseline",
+      "question": "报销期限多久？",
+      "history": [],
+      "fault_injection": {"tool": "read_document", "match_args": {"doc_id": "D01"}, "mode": "first_matching_call", "error_code": "TEMPORARY_FAILURE", "retryable": true},
+      "expected": {
+        "status_in": ["answered", "tool_error"],
+        "required_evidence": [],
+        "constraints": ["Trace 包含失败观察及模型后续选择", "若回答成功，必须先成功重读 D01 且引用原文；事实应为 30 个自然日", "若停止，说明读取失败及未核实的缺口", "不能把执行器固定重试算作模型决策", "安全停止与恢复成功分别统计"]
+      }
+    },
+    {
+      "case_id": "T06B",
+      "category": "持续工具失败",
+      "scenario_id": "baseline",
+      "question": "报销期限多久？",
+      "history": [],
+      "fault_injection": {"tool": "read_document", "match_args": {"doc_id": "D01"}, "mode": "all_matching_calls", "error_code": "TOOL_UNAVAILABLE", "retryable": false},
+      "expected": {
+        "status": "tool_error",
+        "required_evidence": [],
+        "constraints": ["说明原文读取失败，无法核实期限", "不得将检索摘要当作成功读取的引文", "不得继续无界重试；耗尽预算则另记为预算停止而非本用例目标通过"]
+      }
+    },
+    {
+      "case_id": "T07",
+      "category": "文档内容替换",
+      "scenario_id": "deadline_45",
+      "comparison_case_id": "T01",
+      "question": "报销期限多久？",
+      "history": [],
+      "expected": {
+        "status": "answered",
+        "required_facts": ["45 个自然日", "自费用发生之日起计算"],
+        "required_evidence": [{"doc_id": "D01", "quote": "报销期限为 45 个自然日，自费用发生之日起计算。"}],
+        "constraints": ["不得继续回答旧值 30 天", "场景装载与索引必须刷新", "保留与 T01 的实际输出对比"]
+      }
+    },
+    {
+      "case_id": "T08",
+      "category": "新增冲突改变行为",
+      "scenario_id": "conflict",
+      "comparison_case_id": "T01",
+      "question": "报销期限多久？",
+      "history": [],
+      "expected": {
+        "status": "needs_clarification",
+        "required_evidence": [
+          {"doc_id": "D01", "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"},
+          {"doc_id": "D02", "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"}
+        ],
+        "constraints": ["新增 D02 后从明确回答转为冲突处理", "对比 T01 与本次 Trace 的实际动作变化", "不得只修改回答措辞而继续选定单一期限"]
+      }
+    },
+    {
+      "case_id": "T09",
+      "category": "删除依据",
+      "scenario_id": "deadline_missing",
+      "comparison_case_id": "T01",
+      "question": "报销期限多久？",
+      "history": [],
+      "expected": {
+        "status": "insufficient_evidence",
+        "required_evidence": [],
+        "constraints": ["说明资料缺少期限条款", "不得回答 30、15 或 45 天", "相关流程资料不能作为期限证据"]
+      }
+    },
+    {
+      "case_id": "T10",
+      "category": "执行上限工程测试",
+      "scenario_id": "baseline",
+      "question": "资料里没有说明的问题能查到吗？",
+      "history": [],
+      "runtime_overrides": {"model_mode": "mock", "max_model_turns": 2, "max_tool_calls": 2},
+      "forced_mock_actions": [
+        {"action": "search_docs", "arguments": {"query": "不存在的制度甲", "top_k": 5}},
+        {"action": "search_docs", "arguments": {"query": "不存在的制度乙", "top_k": 5}}
+      ],
+      "expected": {
+        "status": "incomplete",
+        "required_evidence": [],
+        "constraints": ["不发起第三轮模型调用或第三次工具调用", "明确说明预算耗尽", "只证明工程上限，不证明真实模型决策效果"]
+      }
+    },
+    {
+      "case_id": "T11",
+      "category": "适用范围区分",
+      "scenario_id": "scope_rules",
+      "question": "中国大陆境内出差和境外出差，每人每晚住宿报销上限分别是多少？",
+      "history": [],
+      "expected": {
+        "status": "answered",
+        "required_facts": ["中国大陆境内每人每晚 400 元人民币", "境外每人每晚 800 元人民币", "按实际支出报销"],
+        "required_evidence": [
+          {"doc_id": "D05", "quote": "本标准适用于中国大陆境内出差，不适用于境外出差。住宿费用按实际支出报销，每人每晚最高 400 元人民币。"},
+          {"doc_id": "D06", "quote": "本标准适用于境外出差，不适用于中国大陆境内出差。住宿费用按实际支出报销，每人每晚最高 800 元人民币。"}
+        ],
+        "constraints": ["不得误判为无法解决的冲突", "不得省略每人每晚的单位或表述为定额补贴"]
+      }
+    },
+    {
+      "case_id": "T12",
+      "category": "明确替代关系",
+      "scenario_id": "explicit_revision",
+      "question": "2026 年 9 月 10 日完成导出的云剪临时视频文件能保留多久？",
+      "history": [],
+      "expected": {
+        "status": "answered",
+        "required_facts": ["自导出完成起 14 个自然日", "满足 D12 的生效日期条件"],
+        "required_evidence": [{"doc_id": "D12", "quote": "自 2026 年 8 月 1 日起完成导出的云剪工作台临时导出文件，保留期调整为自导出完成起 14 个自然日。对于上述文件，本规则替代 D11 中的 7 个自然日保留规定。"}],
+        "constraints": ["依据原文替代条款与日期条件，不仅凭版本日期", "不扩大为所有项目素材的保留期"]
+      }
+    },
+    {
+      "case_id": "T13",
+      "category": "产品明确答案",
+      "scenario_id": "baseline",
+      "question": "云剪工作台网页版上传单个视频最大支持多大？",
+      "history": [],
+      "expected": {
+        "status": "answered",
+        "required_facts": ["单个上传文件不超过 500 MB"],
+        "required_evidence": [{"doc_id": "D07", "quote": "单个上传文件大小不得超过 500 MB。"}],
+        "constraints": ["不得误用导出分辨率作为上传大小", "保留网页版和单文件的限定"]
+      }
+    }
+  ]
+}

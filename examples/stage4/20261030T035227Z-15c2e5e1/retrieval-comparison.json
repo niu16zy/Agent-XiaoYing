@@ -1,0 +1,285 @@
+{
+  "top_k": 5,
+  "query_policy": "Previous user messages plus current question, identical for both modes; no gold queries.",
+  "baseline": "NFKC/lowercase literal full-query substring match; intentionally simple, not BM25/vector search.",
+  "limitations": "Small synthetic development set, includes related variants; no held-out/generalization claim. Recall excludes unlabeled cases; no precision labels.",
+  "rows": [
+    {
+      "case_id": "T01",
+      "query": "报销期限多久？",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "required_doc_ids": [
+        "D01"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D01",
+          "D03",
+          "D05",
+          "D06",
+          "D04"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T02",
+      "query": "报销期限多久？",
+      "snapshot_id": "5b79c4d555c901364332cf73cc15fd4496bff2808674584db340a3e5494996a6",
+      "required_doc_ids": [
+        "D01",
+        "D02"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D01",
+          "D02",
+          "D03",
+          "D05",
+          "D06"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T04",
+      "query": "费用发生以后，最迟多久要在系统里申请报账？",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "required_doc_ids": [
+        "D01"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D01",
+          "D03",
+          "D04",
+          "D05",
+          "D06"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T04-v1",
+      "query": "报销申请最晚几天内提交？",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "required_doc_ids": [
+        "D01"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D01",
+          "D04",
+          "D03",
+          "D05",
+          "D06"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T04-v2",
+      "query": "花完这笔钱后，有多少天可以提交费用报销？",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "required_doc_ids": [
+        "D01"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D01",
+          "D03",
+          "D05",
+          "D06",
+          "D04"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T05",
+      "query": "报销期限多久？ 那需要准备哪些材料？",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "required_doc_ids": [
+        "D03"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D03",
+          "D01",
+          "D04",
+          "D05",
+          "D06"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T07",
+      "query": "报销期限多久？",
+      "snapshot_id": "b05231db7c80ba24cfbab19da651170f4f3b32294d4e0b69053db05c9204f4ce",
+      "required_doc_ids": [
+        "D01"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D01",
+          "D03",
+          "D05",
+          "D06",
+          "D04"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T08",
+      "query": "报销期限多久？",
+      "snapshot_id": "5b79c4d555c901364332cf73cc15fd4496bff2808674584db340a3e5494996a6",
+      "required_doc_ids": [
+        "D01",
+        "D02"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D01",
+          "D02",
+          "D03",
+          "D05",
+          "D06"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T11",
+      "query": "中国大陆境内出差和境外出差，每人每晚住宿报销上限分别是多少？",
+      "snapshot_id": "8af95d8ba9266f4f9b2cda49364dab69449c7ed51c22ed83c1f668891d9e4a57",
+      "required_doc_ids": [
+        "D05",
+        "D06"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D05",
+          "D06",
+          "D03"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T12",
+      "query": "2026 年 9 月 10 日完成导出的云剪临时视频文件能保留多久？",
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10",
+      "required_doc_ids": [
+        "D12"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D12",
+          "D11",
+          "D07",
+          "D08",
+          "D09"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    },
+    {
+      "case_id": "T13",
+      "query": "云剪工作台网页版上传单个视频最大支持多大？",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "required_doc_ids": [
+        "D07"
+      ],
+      "baseline": {
+        "hits": [],
+        "recall": 0.0,
+        "all_required_found": false
+      },
+      "improved": {
+        "hits": [
+          "D07",
+          "D08",
+          "D11",
+          "D12",
+          "D09"
+        ],
+        "recall": 1.0,
+        "all_required_found": true
+      }
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "cases": 11,
+      "macro_recall": 0.0,
+      "all_required_found": 0
+    },
+    "improved": {
+      "cases": 11,
+      "macro_recall": 1.0,
+      "all_required_found": 11
+    }
+  }
+}

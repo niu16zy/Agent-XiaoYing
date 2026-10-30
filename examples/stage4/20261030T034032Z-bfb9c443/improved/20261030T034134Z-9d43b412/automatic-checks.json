@@ -1,0 +1,66 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true,
+    "fault_observed": true,
+    "model_decision_after_failure": true,
+    "failure_not_model_api": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "safe_stop",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "tool_error",
+    "required_evidence": [],
+    "constraints": [
+      "说明原文读取失败，无法核实期限",
+      "不得将检索摘要当作成功读取的引文",
+      "不得继续无界重试；耗尽预算则另记为预算停止而非本用例目标通过"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限 报销时限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "已检索到《费用报销提交规则》可能规定报销期限，但该文档全文读取工具返回不可恢复错误（TOOL_UNAVAILABLE，retryable=false），无法取得可正式引用的原文。其他检索到的材料清单、审批说明及住宿标准均明确不规定报销提交期限。因此目前无法核实并给出报销期限。",
+        "status": "tool_error",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "《费用报销提交规则》（D01）全文未能成功读取，缺少可逐字引用的期限规则原文",
+          "缺少其他明确规定报销提交期限的制度原文"
+        ],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "tool_error",
+  "model_turns": 3,
+  "tool_calls": 2
+}

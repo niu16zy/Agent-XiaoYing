@@ -1,0 +1,14 @@
+{
+  "question": "中国大陆境内出差和境外出差，每人每晚住宿报销上限分别是多少？",
+  "history": [],
+  "mode": "real",
+  "model": "deepseek-flash",
+  "snapshot_id": "8af95d8ba9266f4f9b2cda49364dab69449c7ed51c22ed83c1f668891d9e4a57",
+  "limits": {
+    "max_model_turns": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 90,
+    "tool_timeout": 5,
+    "total_timeout": 300
+  }
+}

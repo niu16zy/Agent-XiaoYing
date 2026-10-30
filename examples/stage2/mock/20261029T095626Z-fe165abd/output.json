@@ -1,0 +1,15 @@
+{
+  "answer": "离线流程演示已结束；Mock 不生成可作为业务结论的答案。",
+  "status": "incomplete",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "需要真实模型判断证据与业务结论"
+  ],
+  "follow_up_question": null,
+  "run_id": "20261029T095626Z-fe165abd",
+  "mode": "mock",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 0.016
+}

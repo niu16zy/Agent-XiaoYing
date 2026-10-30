@@ -1,0 +1,20 @@
+{
+  "case_id": "T05",
+  "run_id": "20261029T144645Z-eb043c6c",
+  "status": "answered",
+  "model_turns": 7,
+  "tool_calls": 4,
+  "citation_provenance": "passed",
+  "semantic_review": "failed",
+  "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+  "note": "首轮T05额外沿用历史期限结论，未重新读取该依据；已修复后重跑。",
+  "actions": [
+    "search_docs",
+    "read_document",
+    "read_document",
+    "read_document",
+    "finish"
+  ],
+  "invalid_responses": 2,
+  "tool_failures": 0
+}

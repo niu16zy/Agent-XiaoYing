@@ -1,0 +1,14 @@
+{
+  "question": "2026 年 9 月 10 日完成导出的云剪临时视频文件能保留多久？",
+  "history": [],
+  "mode": "real",
+  "model": "deepseek-flash",
+  "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10",
+  "limits": {
+    "max_model_turns": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 90,
+    "tool_timeout": 5,
+    "total_timeout": 300
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "question": "那需要准备哪些材料？",
+  "history": [
+    {"role": "user", "content": "报销期限多久？"},
+    {"role": "assistant", "content": "依据 D01，报销期限为自费用发生之日起 30 个自然日。"}
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "checks": {
+    "status": false,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": false
+  },
+  "automatic_pass": false,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "30 个自然日",
+      "自费用发生之日起计算"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "每个改写问题独立运行",
+      "首次检索不足时允许模型改写查询",
+      "不要求固定动作顺序"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销 提交 期限 花完 多少天",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销 时限 天数",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销管理办法",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "发票 报销 提交 财务",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "本次未能检索到关于费用报销提交时限的制度原文，因此无法确认花完这笔钱后可以提交报销的具体天数，也无法说明起算点、按自然日还是工作日计算等条件。",
+        "status": "insufficient_evidence",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "缺少费用报销提交时限的制度原文（多次检索均无命中，未能读取任何文档）",
+          "无法确认起算点、计算单位（自然日/工作日）及适用条件"
+        ],
+        "follow_up_question": "请提供报销制度的具体名称或文号，或上传相关制度文件，以便核实报销提交时限。"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 5,
+  "tool_calls": 4
+}

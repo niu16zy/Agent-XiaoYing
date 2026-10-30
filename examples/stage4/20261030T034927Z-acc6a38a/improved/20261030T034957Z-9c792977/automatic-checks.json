@@ -1,0 +1,82 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "30 个自然日",
+      "自费用发生之日起计算"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "每个改写问题独立运行",
+      "首次检索不足时允许模型改写查询",
+      "不要求固定动作顺序"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销 提交 天数 期限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内通过费用系统提交报销申请。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+            "supports": "报销期限为30个自然日，起算点为费用发生之日"
+          },
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "员工应在该期限内通过费用系统提交报销申请。",
+            "supports": "提交方式与需在期限内提交的要求"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "answered",
+  "model_turns": 3,
+  "tool_calls": 2
+}

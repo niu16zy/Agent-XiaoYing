@@ -1,0 +1,36 @@
+{
+  "facts": [],
+  "conflicts": [
+    {
+      "conflict_id": "C-1891351497",
+      "topic": "同句式数值规则待查证",
+      "doc_ids": [
+        "D01",
+        "D02"
+      ],
+      "status": "unresolved",
+      "citations": [
+        {
+          "doc_id": "D01",
+          "version_date": "2026-01-10",
+          "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+          "supports": "同范围同句式出现不同数值，需查证适用关系。",
+          "start": 0,
+          "end": 25,
+          "snapshot_id": "5b79c4d555c901364332cf73cc15fd4496bff2808674584db340a3e5494996a6"
+        },
+        {
+          "doc_id": "D02",
+          "version_date": "2026-03-15",
+          "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+          "supports": "同范围同句式出现不同数值，需查证适用关系。",
+          "start": 0,
+          "end": 25,
+          "snapshot_id": "5b79c4d555c901364332cf73cc15fd4496bff2808674584db340a3e5494996a6"
+        }
+      ],
+      "resolution": null,
+      "resolution_citations": []
+    }
+  ]
+}

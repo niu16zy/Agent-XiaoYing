@@ -1,0 +1,87 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "insufficient_evidence",
+    "required_facts": [
+      "现有资料未规定育儿假天数"
+    ],
+    "required_evidence": [],
+    "constraints": [
+      "不得用常识或外部法规推定本公司天数",
+      "如引用 D10，必须说明它只提供流程，不支持具体天数"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "search_docs",
+    "read_document",
+    "search_docs",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "育儿假 天数 规定",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "假期天数标准 休假",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D10"
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "育儿假",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "现有可读制度原文未规定育儿假天数。《员工请假申请流程》仅说明请假申请与审批流程，并明确声明不包含育儿假天数或其他假期天数标准；因此无法据此给出公司育儿假的具体天数。",
+        "status": "insufficient_evidence",
+        "citations": [
+          {
+            "doc_id": "D10",
+            "version_date": "2026-06-01",
+            "quote": "本流程说明不包含年假额度、育儿假天数或其他假期天数标准。",
+            "supports": "证明已读取的请假流程明确不包含育儿假天数标准"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [
+          "缺少规定育儿假具体天数的制度原文"
+        ],
+        "follow_up_question": "是否需要向人力资源部门确认适用的育儿假制度或提供相应制度文件？"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 5,
+  "tool_calls": 4
+}

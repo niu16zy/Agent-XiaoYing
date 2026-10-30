@@ -1,0 +1,6 @@
+{
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "thinking": "enabled",
+  "reasoning_effort": "high"
+}

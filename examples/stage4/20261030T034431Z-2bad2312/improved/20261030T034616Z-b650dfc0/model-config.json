@@ -1,0 +1,8 @@
+{
+  "mode": "mock",
+  "model": "scripted-actions",
+  "endpoint": null,
+  "request_parameters": {
+    "adapter": "ScriptedModel"
+  }
+}

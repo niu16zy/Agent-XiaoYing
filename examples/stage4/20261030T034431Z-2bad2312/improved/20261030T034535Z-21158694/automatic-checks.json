@@ -1,0 +1,84 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "发票",
+      "支付凭证",
+      "费用用途说明",
+      "出差费用还须已审批的出差申请"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D03",
+        "quote": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。"
+      }
+    ],
+    "constraints": [
+      "识别报销主题并读取 D03",
+      "不得把出差申请描述为所有报销都必须提供",
+      "历史是合成测试输入，不是真实运行记录"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销 所需材料 提交材料",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D03"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "申请费用报销时，必须提供发票、支付凭证和费用用途说明；出差相关费用还须附上已审批的出差申请。材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D03",
+            "version_date": "2026-02-01",
+            "quote": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。",
+            "supports": "报销必备材料及出差附加材料"
+          },
+          {
+            "doc_id": "D03",
+            "version_date": "2026-02-01",
+            "quote": "材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+            "supports": "材料的提交方式与图像要求"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "answered",
+  "model_turns": 3,
+  "tool_calls": 2
+}

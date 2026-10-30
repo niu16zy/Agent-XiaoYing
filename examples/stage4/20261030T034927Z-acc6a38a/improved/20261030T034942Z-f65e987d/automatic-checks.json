@@ -1,0 +1,88 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "insufficient_evidence",
+    "required_facts": [
+      "现有资料未规定育儿假天数"
+    ],
+    "required_evidence": [],
+    "constraints": [
+      "不得用常识或外部法规推定本公司天数",
+      "如引用 D10，必须说明它只提供流程，不支持具体天数"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "育儿假 天数",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "育儿假 规定 天数 标准",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "假期管理制度 请假 类型",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D10"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "本次已读资料未能确认公司育儿假的天数。已读取的《员工请假申请流程》仅说明请假申请操作，并明确声明“本流程说明不包含年假额度、育儿假天数或其他假期天数标准”，因此无法据此给出天数。",
+        "status": "insufficient_evidence",
+        "citations": [
+          {
+            "doc_id": "D10",
+            "version_date": "2026-06-01",
+            "quote": "本流程说明不包含年假额度、育儿假天数或其他假期天数标准。",
+            "supports": "说明该流程文件不规定育儿假天数，无法作为天数依据"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [
+          "缺少规定育儿假天数及适用条件（如子女年龄、计算方式、起算点）的公司制度原文",
+          "本次检索未找到育儿假专项制度文档，无法核实具体天数"
+        ],
+        "follow_up_question": "公司是否有育儿假专项制度或员工假期管理手册？如有，请提供文档名称或所在系统位置，以便核实具体天数。"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 5,
+  "tool_calls": 4
+}

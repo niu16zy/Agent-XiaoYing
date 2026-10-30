@@ -1,0 +1,12 @@
+{
+  "reviewer": "Codex AI; not independent candidate review",
+  "case_id": "T13",
+  "run_id": "20261030T035047Z-586dc4e7",
+  "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035047Z-586dc4e7",
+  "mode": "real",
+  "status": "answered",
+  "automatic_pass": true,
+  "semantic_review": "pass",
+  "review_note": "网页版单文件500MB，未混淆导出分辨率。",
+  "output_sha256": "70284a563789422dd2bb5dbaf968bf441c6bc0bd5b42bbc4ec4b1f3532e63d33"
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "baseline": "T01",
+    "changed": "T07",
+    "baseline_run": "20261030T034444Z-6c9da156",
+    "changed_run": "20261030T034554Z-151a9ada",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "answered"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pending"
+  },
+  {
+    "baseline": "T01",
+    "changed": "T08",
+    "baseline_run": "20261030T034444Z-6c9da156",
+    "changed_run": "20261030T034559Z-a32b4161",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "needs_clarification"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pending"
+  },
+  {
+    "baseline": "T01",
+    "changed": "T09",
+    "baseline_run": "20261030T034444Z-6c9da156",
+    "changed_run": "20261030T034607Z-5206eeb9",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "incomplete"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "read_document"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": false,
+    "semantic_review": "pending"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "started_at": "2026-10-30T03:47:27.764944+00:00",
+  "mode": "offline",
+  "python": "3.12.3",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "packages": {
+    "openai": "2.30.0",
+    "pytest": "9.1.1",
+    "setuptools": null
+  },
+  "source_sha256": {
+    "data/documents.json": "57075a1337d244213ed24007947b772e12ffa0bf34a51347d90e68f733029e76",
+    "data/evaluation_cases.json": "602535d366cad90b8fe9842406dafb53f020b3494a27b0e3b2e40a3c849c0538",
+    "data/scenarios.json": "bb685e2cff649984e843421fb60258987c7d7e684219de15aeae32d486f6c1da",
+    "pyproject.toml": "77fcee896e99eb32f403a7927c27e2b72500aaa87f03fdc3f2b45c66f41aa6e6",
+    "scripts/check_model_connection.py": "eeb3f5e81ce11867f7cd18c7b279229c4f425c6fd05beddcdd1ea28db7c811e0",
+    "scripts/evaluate.py": "d5c9cf77b0d3f8b79e5f3d75b596026625cd9dc8c773aba9b413db62296b1019",
+    "scripts/run_agent.py": "feff2502ba91af6485e00e019b21765d9b07d2dd67222777aad18a33fb8801b7",
+    "scripts/stage1_demo.py": "12d9ea87b1428223cda72b7bc0e2531a2e569578d67f2cacf20378a06eaa1f5e",
+    "scripts/verify_stage3.py": "4f8e7f630190ffaedb83ca7b9c86bf0ecaba10f30164b339877ce890eb3bbb84",
+    "src/knowledge_agent/__init__.py": "4b4c33a109318d0d0c3ef0b1ea7c1649a97e8238ad3c8a26059a224d3a7b380f",
+    "src/knowledge_agent/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/knowledge_agent/agent.py": "ed23554c521052677e505e92b112614f6f82de68b3b2ff936703e6a19215da9c",
+    "src/knowledge_agent/cli.py": "256b9307bd351e45663c14f43d43431016a5c556e297cd8fe89c18e4a3cef9cb",
+    "src/knowledge_agent/config.py": "fa8acd3279c6b77b0016c6278f1f9d80304b50438206b670e00950c3b3a5f2bb",
+    "src/knowledge_agent/corpus.py": "42400ecaeb15ff3be3eef59b894716b416e522fb56f2171a86f73b9db798b721",
+    "src/knowledge_agent/evaluation.py": "269836561a7c2e3be58438c351385bba42df324ecd222a4a03478a60734e58ec",
+    "src/knowledge_agent/evidence.py": "e07c27eaa636a62c5ed975d49f82158e4cf39fe23fbb578561c2820179329d35",
+    "src/knowledge_agent/mock_model.py": "2fda89bc6fd523cb1c8df3f186f247856a57261f06fb52573a9245597c46d66d",
+    "src/knowledge_agent/model.py": "465913e5e77630266c23856c8028a2cc9e3a89d26b55036f60327aabb71b15a0",
+    "src/knowledge_agent/prompts.py": "1bff35719ae3692b9b58f6d26a7fe1256da8e758166ffe694ba322d4fd985575",
+    "src/knowledge_agent/render.py": "dde2edc86fc88701e84e1d6dd269aa88c9b9df845b2d8e3532dbda21198453ec",
+    "src/knowledge_agent/retrieval.py": "a59d6c684882a3189ed1b80cc6c0ed36272e84255110e0b5ffaf9dc3e8fd4661",
+    "src/knowledge_agent/schemas.py": "a921fbfa2769ff42ed70362652b59757b16a6ee8114c88db32fd8bfb6978e05c",
+    "src/knowledge_agent/tools.py": "230258222bfa2dd4ca4fd26f3b154acb03548019eb870696f8f1a9b64271d081",
+    "src/knowledge_agent/trace.py": "c52100eb914f014e0b607c9bfc5163a671ae11e40e095b3b12a454cc987b601e",
+    "src/knowledge_agent/validation.py": "a862c0346a3511bea6ed8a7a753882ea4fbcce3d8820d35edc44cd0962cb8d61"
+  },
+  "case_ids": [
+    "T10"
+  ],
+  "compare_baseline": false
+}

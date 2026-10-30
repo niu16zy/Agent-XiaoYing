@@ -1,0 +1,12 @@
+{
+  "reviewer": "Codex AI; not independent candidate review",
+  "case_id": "T06A",
+  "run_id": "20261030T035008Z-0036bfdf",
+  "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035008Z-0036bfdf",
+  "mode": "real",
+  "status": "answered",
+  "automatic_pass": true,
+  "semantic_review": "pass",
+  "review_note": "Trace先观察临时失败，模型主动重读成功，再引用D01回答30天；统计为恢复。",
+  "output_sha256": "aa3309f720073a93d3e950c3b397b955da9766525b599f53e946602677f9528f"
+}

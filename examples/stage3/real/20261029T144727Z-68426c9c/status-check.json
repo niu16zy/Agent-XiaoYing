@@ -1,0 +1,8 @@
+{
+  "case_id": "T09",
+  "expected_statuses": [
+    "insufficient_evidence"
+  ],
+  "status_matches": true,
+  "semantic_review": "pending"
+}

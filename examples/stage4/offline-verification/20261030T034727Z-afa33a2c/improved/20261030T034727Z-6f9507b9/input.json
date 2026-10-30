@@ -1,0 +1,14 @@
+{
+  "question": "资料里没有说明的问题能查到吗？",
+  "history": [],
+  "mode": "mock",
+  "model": "scripted-actions",
+  "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+  "limits": {
+    "max_model_turns": 2,
+    "max_tool_calls": 2,
+    "model_timeout": 30,
+    "tool_timeout": 5,
+    "total_timeout": 120
+  }
+}

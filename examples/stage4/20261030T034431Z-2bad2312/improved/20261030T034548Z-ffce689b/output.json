@@ -1,0 +1,19 @@
+{
+  "answer": "费用报销期限的制度原文读取失败（工具返回不可恢复错误），因此本次无法核实并给出确定答复。检索摘要提示可能存在“30个自然日、自费用发生之日起计算”的规定，但该内容未经成功读取，不能作为正式答复依据。",
+  "status": "tool_error",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "缺少《费用报销提交规则》的成功读取原文，无法确认报销期限及其起算点"
+  ],
+  "follow_up_question": null,
+  "run_id": "20261030T034548Z-ffce689b",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 3.078,
+  "error": {
+    "source": "business_tool",
+    "code": "UNRESOLVED_TOOL_FAILURE"
+  }
+}

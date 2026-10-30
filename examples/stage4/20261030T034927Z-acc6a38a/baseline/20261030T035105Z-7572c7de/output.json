@@ -1,0 +1,16 @@
+{
+  "answer": "在本次已读资料中未能检索到任何与费用报账时限相关的制度原文，因此无法核实“费用发生后最迟多久需在系统申请报账”的具体规则。",
+  "status": "insufficient_evidence",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "缺少费用报销/报账时限的制度原文（多为无命中检索）",
+    "无法确认报账时限的天数、起算点及适用条件"
+  ],
+  "follow_up_question": "请提供费用报销制度的文档名称或编号，以便定位报账时限条款。",
+  "run_id": "20261030T035105Z-7572c7de",
+  "mode": "real",
+  "model_turns": 5,
+  "tool_calls": 4,
+  "elapsed_seconds": 5.0
+}

@@ -1,0 +1,25 @@
+{
+  "answer": "费用报销申请的提交期限为 30 个自然日，自费用发生之日起计算；员工需在该期限内通过费用系统提交报销申请。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "version_date": "2026-01-10",
+      "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+      "supports": "支持报销申请须在费用发生之日起 30 个自然日内通过费用系统提交。\n",
+      "start": 0,
+      "end": 46,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [
+    "本次已读资料未说明起算日是否计入当日、截止时刻等计算边界，也未说明逾期未提交的处理后果。"
+  ],
+  "follow_up_question": null,
+  "run_id": "20261030T035112Z-2f75fdbb",
+  "mode": "real",
+  "model_turns": 6,
+  "tool_calls": 5,
+  "elapsed_seconds": 8.141
+}

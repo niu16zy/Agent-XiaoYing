@@ -1,0 +1,20 @@
+{
+  "answer": "已检索到《费用报销提交规则》可能规定报销期限，但该文档全文读取工具返回不可恢复错误（TOOL_UNAVAILABLE，retryable=false），无法取得可正式引用的原文。其他检索到的材料清单、审批说明及住宿标准均明确不规定报销提交期限。因此目前无法核实并给出报销期限。",
+  "status": "tool_error",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "《费用报销提交规则》（D01）全文未能成功读取，缺少可逐字引用的期限规则原文",
+    "缺少其他明确规定报销提交期限的制度原文"
+  ],
+  "follow_up_question": null,
+  "run_id": "20261030T034134Z-9d43b412",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 5.156,
+  "error": {
+    "source": "business_tool",
+    "code": "UNRESOLVED_TOOL_FAILURE"
+  }
+}

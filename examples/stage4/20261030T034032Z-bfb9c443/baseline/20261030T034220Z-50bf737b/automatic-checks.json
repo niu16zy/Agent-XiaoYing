@@ -1,0 +1,86 @@
+{
+  "checks": {
+    "status": false,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": false
+  },
+  "automatic_pass": false,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "needs_clarification",
+    "required_facts": [
+      "D01 为 30 个自然日",
+      "D02 为 15 个自然日",
+      "现有资料无法确认适用范围或优先关系"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      },
+      {
+        "doc_id": "D02",
+        "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "请求确认适用制度",
+      "不得以版本更新或期限更短为由选定 D02",
+      "Trace 应体现读取双方依据及冲突查证；没有补充资料则如实说明"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限 报销时限 规定",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销 管理规定",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "差旅费 借款 原始凭证 提交财务",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "当前知识库中未能检索到任何与报销相关的制度文档，因此无法核实报销期限的具体规定（如自然日/工作日、起算点、按费用类型区分等）。建议补充提供《费用报销管理办法》一类的制度原文，或向财务部门确认适用制度后再作答。",
+        "status": "insufficient_evidence",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "缺少报销管理制度原文（报销提交时限、起算点、单位等）",
+          "多次检索（报销期限、费用报销管理规定、差旅费/借款/原始凭证）均返回 0 条命中，知识库可能未收录该类制度"
+        ],
+        "follow_up_question": "是否需要我按您指定的制度名称或文号再次检索？或者您可提供报销制度的原文/链接？"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 4,
+  "tool_calls": 3
+}

@@ -1,0 +1,90 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "insufficient_evidence",
+    "required_evidence": [],
+    "constraints": [
+      "说明资料缺少期限条款",
+      "不得回答 30、15 或 45 天",
+      "相关流程资料不能作为期限证据"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限 多久",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销 提交时限 天数 逾期",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D03"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "已检索到并读取现有费用报销相关制度原文，其中《费用报销提交规则》只规定员工通过费用系统提交申请、填写费用发生日期、用途和金额及可查看处理状态，未规定提交期限；《费用报销材料清单》明确“本清单不规定报销提交期限”。因此，现有制度原文中查不到报销期限的具体天数或起算规则，无法给出确切期限，需向制度管理方确认。",
+        "status": "insufficient_evidence",
+        "citations": [
+          {
+            "doc_id": "D03",
+            "version_date": "2026-02-01",
+            "quote": "本清单不规定报销提交期限。",
+            "supports": "材料清单不涉及报销提交期限"
+          },
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+            "supports": "提交规则仅规定提交方式与填写要素，未规定期限"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [
+          "缺少明确规定报销提交期限（天数、起算点、自然日或工作日）的制度原文"
+        ],
+        "follow_up_question": "你们所在地区或费用类型是否有单独的费用报销管理办法？如有，请提供制度名称或文件，以便核实报销期限。"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 5,
+  "tool_calls": 4
+}

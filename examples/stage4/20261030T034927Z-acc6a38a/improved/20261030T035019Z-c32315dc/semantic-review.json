@@ -1,0 +1,12 @@
+{
+  "reviewer": "Codex AI; not independent candidate review",
+  "case_id": "T07",
+  "run_id": "20261030T035019Z-c32315dc",
+  "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035019Z-c32315dc",
+  "mode": "real",
+  "status": "answered",
+  "automatic_pass": true,
+  "semantic_review": "pass",
+  "review_note": "同ID同日期的D01正文换成45，快照与答案一起改变，不复用30。",
+  "output_sha256": "0e89c3803c73c6bfa806f62fca11c579284a04d154d29794bc4a80aa3898ce8f"
+}

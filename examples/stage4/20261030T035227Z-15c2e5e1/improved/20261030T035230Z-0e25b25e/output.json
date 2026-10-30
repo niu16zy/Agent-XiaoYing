@@ -1,0 +1,20 @@
+{
+  "answer": "无法核实报销期限：制度原文读取工具返回不可恢复错误（TOOL_UNAVAILABLE），本次未能成功读取相关规定原文，因此不能给出报销期限的具体天数、起算点或适用条件。",
+  "status": "tool_error",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "缺少成功读取的报销期限制度原文（doc_id D01 读取失败，错误不可恢复）",
+    "报销期限的天数、起算点及适用条件均未获得可引用原文"
+  ],
+  "follow_up_question": "是否需要稍后重试检索/读取该制度，或由您提供制度原文？",
+  "run_id": "20261030T035230Z-0e25b25e",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 4.516,
+  "error": {
+    "source": "business_tool",
+    "code": "UNRESOLVED_TOOL_FAILURE"
+  }
+}

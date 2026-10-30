@@ -1,0 +1,19 @@
+{
+  "case_id": "T06A",
+  "run_id": "20261029T144701Z-efcfeb4c",
+  "status": "answered",
+  "model_turns": 5,
+  "tool_calls": 3,
+  "citation_provenance": "passed",
+  "semantic_review": "passed",
+  "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+  "note": "读取首次失败后由模型选择重试，成功读取后回答；属于恢复成功。",
+  "actions": [
+    "search_docs",
+    "read_document",
+    "read_document",
+    "finish"
+  ],
+  "invalid_responses": 1,
+  "tool_failures": 1
+}

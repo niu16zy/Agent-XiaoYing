@@ -1,0 +1,32 @@
+{
+  "answer": "申请费用报销时须准备三类基本材料：发票、支付凭证和费用用途说明。如属出差相关费用，还须附上已审批的出差申请。材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "version_date": "2026-02-01",
+      "quote": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。",
+      "supports": "报销必备的三类基本材料及出差附加材料",
+      "start": 0,
+      "end": 46,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D03",
+      "version_date": "2026-02-01",
+      "quote": "材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+      "supports": "材料提交方式与图像清晰度要求",
+      "start": 48,
+      "end": 77,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "follow_up_question": null,
+  "run_id": "20261030T034122Z-d9f1357e",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 3.953
+}

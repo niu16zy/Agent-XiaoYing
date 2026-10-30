@@ -1,0 +1,14 @@
+{
+  "question": "报销期限多久？",
+  "history": [],
+  "mode": "real",
+  "model": "deepseek-flash",
+  "snapshot_id": "b05231db7c80ba24cfbab19da651170f4f3b32294d4e0b69053db05c9204f4ce",
+  "limits": {
+    "max_model_turns": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 90,
+    "tool_timeout": 5,
+    "total_timeout": 300
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "kind": "stage1_tool_demo",
+  "model_called": false,
+  "input": {
+    "scenario": "deadline_missing",
+    "query": "报销期限多久？",
+    "read_id": "D01",
+    "retrieval_mode": "improved",
+    "fail_read": false
+  },
+  "snapshot_id": "d03ee2820a1f2928b52c0d8182fa961f8dfd0ba522a6b31b2488f984bc3effe5",
+  "search": {
+    "ok": true,
+    "data": {
+      "hits": [
+        {
+          "doc_id": "D03",
+          "title": "费用报销材料清单",
+          "version_date": "2026-02-01",
+          "snippet": "材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。本清单不规定报销提交期限。",
+          "start": 48,
+          "end": 90,
+          "score": 3.938771
+        },
+        {
+          "doc_id": "D05",
+          "title": "中国大陆境内出差住宿标准",
+          "version_date": "2026-04-01",
+          "snippet": "申请住宿费报销须提供住宿发票和入住明细。本标准不规定费用报销的提交期限。",
+          "start": 54,
+          "end": 90,
+          "score": 3.604153
+        },
+        {
+          "doc_id": "D06",
+          "title": "境外出差住宿标准",
+          "version_date": "2026-04-01",
+          "snippet": "申请住宿费报销须提供住宿凭证和入住明细。本标准不规定费用报销的提交期限。",
+          "start": 54,
+          "end": 90,
+          "score": 3.604153
+        },
+        {
+          "doc_id": "D04",
+          "title": "费用申请审批与状态查询",
+          "version_date": "2026-02-05",
+          "snippet": "申请被退回时，应按退回说明补充材料后重新提交。本说明未规定审批完成时限或报销提交期限。",
+          "start": 56,
+          "end": 99,
+          "score": 3.132536
+        },
+        {
+          "doc_id": "D01",
+          "title": "费用报销提交规则",
+          "version_date": "2026-01-10",
+          "snippet": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+          "start": 0,
+          "end": 53,
+          "score": 2.77562
+        }
+      ],
+      "total_hits": 6,
+      "truncated": true,
+      "snapshot_id": "d03ee2820a1f2928b52c0d8182fa961f8dfd0ba522a6b31b2488f984bc3effe5"
+    },
+    "error": null
+  },
+  "read": {
+    "ok": true,
+    "data": {
+      "doc_id": "D01",
+      "title": "费用报销提交规则",
+      "version_date": "2026-01-10",
+      "scope": null,
+      "supersedes": [],
+      "content": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+      "start": 0,
+      "end": 53,
+      "snapshot_id": "d03ee2820a1f2928b52c0d8182fa961f8dfd0ba522a6b31b2488f984bc3effe5"
+    },
+    "error": null
+  }
+}

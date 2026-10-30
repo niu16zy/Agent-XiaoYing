@@ -1,0 +1,1 @@
+{"step": 1, "event": "completed", "status": "tool_error", "model_turns": 1, "tool_calls": 0, "error": {"source": "model", "code": "MODEL_HTTP_401"}}

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enterprise-knowledge-agent"
+version = "0.1.0"
+description = "Evidence-first enterprise knowledge tools"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+model = ["openai==2.30.0"]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+knowledge-agent = "knowledge_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

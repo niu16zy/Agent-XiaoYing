@@ -1,0 +1,32 @@
+{
+  "answer": "2026 年 9 月 10 日完成导出的云剪工作台临时导出文件，保留期为自导出完成起 14 个自然日。依据 2026 年 8 月 1 日起施行的修订规则，该规则适用于 2026 年 8 月 1 日起完成导出的临时导出文件，并替代原 7 个自然日的保留规定；2026 年 8 月 1 日之前完成导出的文件仍按原规定执行。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D12",
+      "version_date": "2026-08-01",
+      "quote": "自 2026 年 8 月 1 日起完成导出的云剪工作台临时导出文件，保留期调整为自导出完成起 14 个自然日。对于上述文件，本规则替代 D11 中的 7 个自然日保留规定。",
+      "supports": "9月10日导出适用14个自然日保留期，并替代原7日规定",
+      "start": 0,
+      "end": 86,
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10"
+    },
+    {
+      "doc_id": "D12",
+      "version_date": "2026-08-01",
+      "quote": "2026 年 8 月 1 日之前完成导出的临时文件仍按 D11 执行。",
+      "supports": "说明修订规则的适用范围起点",
+      "start": 88,
+      "end": 123,
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "follow_up_question": null,
+  "run_id": "20261030T035041Z-3dc4848f",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 4.266
+}

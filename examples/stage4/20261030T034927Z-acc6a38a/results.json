@@ -1,0 +1,2058 @@
+{
+  "mode": "real",
+  "rows": [
+    {
+      "case_id": "T01",
+      "run_id": "20261030T034930Z-907c44b6",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034930Z-907c44b6",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "不得引用当前场景不可见的 D02",
+          "正式引用必须来自本次成功读取"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                "supports": "明确报销期限长度、时间单位（自然日）及起算点。"
+              },
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "明确应在上述期限内提交报销申请。"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T02",
+      "run_id": "20261030T034934Z-13aa0891",
+      "mode": "real",
+      "snapshot_id": "5b79c4d555c901364332cf73cc15fd4496bff2808674584db340a3e5494996a6",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034934Z-13aa0891",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "needs_clarification",
+        "required_facts": [
+          "D01 为 30 个自然日",
+          "D02 为 15 个自然日",
+          "现有资料无法确认适用范围或优先关系"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          },
+          {
+            "doc_id": "D02",
+            "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "请求确认适用制度",
+          "不得以版本更新或期限更短为由选定 D02",
+          "Trace 应体现读取双方依据及冲突查证；没有补充资料则如实说明"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "search_docs",
+        "ask_user"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D02"
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "制度适用 优先 冲突 报销规则效力",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "ask_user",
+          "arguments": {
+            "answer": "本次已读资料对报销期限存在两条互斥规定，且两份原文均写明自费用发生之日起按自然日计算，但未写明各自的适用范围、优先依据或替代条款，无法确定应适用哪一条：\n1）《费用报销提交规则》（2026-01-10）：报销期限为 30 个自然日，自费用发生之日起计算。\n2）《费用报销办理说明》（2026-03-15）：报销期限为 15 个自然日，自费用发生之日起计算。\n不能仅因后者日期更新即认定其替代前者。请确认贵公司实际适用哪一份制度，我再给出确定结论。",
+            "status": "needs_clarification",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                "supports": "一条规则规定30个自然日，自费用发生之日起算。"
+              },
+              {
+                "doc_id": "D02",
+                "version_date": "2026-03-15",
+                "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+                "supports": "另一条规则规定15个自然日，自费用发生之日起算，与前者互斥。"
+              }
+            ],
+            "conflicts": [
+              {
+                "conflict_id": "C-1891351497",
+                "topic": "报销提交期限：30个自然日 与 15个自然日",
+                "citations": [
+                  {
+                    "doc_id": "D01",
+                    "version_date": "2026-01-10",
+                    "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                    "supports": "30个自然日规则。"
+                  },
+                  {
+                    "doc_id": "D02",
+                    "version_date": "2026-03-15",
+                    "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+                    "supports": "15个自然日规则。"
+                  }
+                ],
+                "status": "unresolved",
+                "resolution": null
+              }
+            ],
+            "gaps": [
+              "两份制度均未写明适用范围、优先依据或替代条款，无法判定适用哪一条"
+            ],
+            "follow_up_question": "请问贵公司实际执行的是《费用报销提交规则》的30个自然日，还是《费用报销办理说明》的15个自然日？或请提供说明两者适用范围/优先关系的文件。"
+          }
+        }
+      ],
+      "status": "needs_clarification",
+      "model_turns": 5,
+      "tool_calls": 4
+    },
+    {
+      "case_id": "T03",
+      "run_id": "20261030T034942Z-f65e987d",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034942Z-f65e987d",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "insufficient_evidence",
+        "required_facts": [
+          "现有资料未规定育儿假天数"
+        ],
+        "required_evidence": [],
+        "constraints": [
+          "不得用常识或外部法规推定本公司天数",
+          "如引用 D10，必须说明它只提供流程，不支持具体天数"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "育儿假 天数",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "育儿假 规定 天数 标准",
+            "top_k": 8
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "假期管理制度 请假 类型",
+            "top_k": 8
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D10"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "本次已读资料未能确认公司育儿假的天数。已读取的《员工请假申请流程》仅说明请假申请操作，并明确声明“本流程说明不包含年假额度、育儿假天数或其他假期天数标准”，因此无法据此给出天数。",
+            "status": "insufficient_evidence",
+            "citations": [
+              {
+                "doc_id": "D10",
+                "version_date": "2026-06-01",
+                "quote": "本流程说明不包含年假额度、育儿假天数或其他假期天数标准。",
+                "supports": "说明该流程文件不规定育儿假天数，无法作为天数依据"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [
+              "缺少规定育儿假天数及适用条件（如子女年龄、计算方式、起算点）的公司制度原文",
+              "本次检索未找到育儿假专项制度文档，无法核实具体天数"
+            ],
+            "follow_up_question": "公司是否有育儿假专项制度或员工假期管理手册？如有，请提供文档名称或所在系统位置，以便核实具体天数。"
+          }
+        }
+      ],
+      "status": "insufficient_evidence",
+      "model_turns": 5,
+      "tool_calls": 4
+    },
+    {
+      "case_id": "T04",
+      "run_id": "20261030T034949Z-72aa0f25",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034949Z-72aa0f25",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "每个改写问题独立运行",
+          "首次检索不足时允许模型改写查询",
+          "不要求固定动作顺序"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用发生后 最迟 多久 系统 申请报账 报销 时限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内通过费用系统提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "明确报账期限为30个自然日、起算点为费用发生之日，并要求通过费用系统提交"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T04-v1",
+      "run_id": "20261030T034953Z-fb111a92",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034953Z-fb111a92",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "每个改写问题独立运行",
+          "首次检索不足时允许模型改写查询",
+          "不要求固定动作顺序"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销申请 最晚 提交 期限 天数",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内通过费用系统提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "报销提交期限为费用发生之日起30个自然日，并需在该期限内通过费用系统提交。"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T04-v2",
+      "run_id": "20261030T034957Z-9c792977",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034957Z-9c792977",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "每个改写问题独立运行",
+          "首次检索不足时允许模型改写查询",
+          "不要求固定动作顺序"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用报销 提交 天数 期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内通过费用系统提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                "supports": "报销期限为30个自然日，起算点为费用发生之日"
+              },
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "提交方式与需在期限内提交的要求"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T05",
+      "run_id": "20261030T035001Z-35d83877",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035001Z-35d83877",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "发票",
+          "支付凭证",
+          "费用用途说明",
+          "出差费用还须已审批的出差申请"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D03",
+            "quote": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。"
+          }
+        ],
+        "constraints": [
+          "识别报销主题并读取 D03",
+          "不得把出差申请描述为所有报销都必须提供",
+          "历史是合成测试输入，不是真实运行记录"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销 需要准备的材料 单据 发票",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D03"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销所需材料依据 D03《费用报销材料清单》：申请费用报销时，必须提供发票、支付凭证和费用用途说明；如果是出差相关费用，还须附上已审批的出差申请。材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D03",
+                "version_date": "2026-02-01",
+                "quote": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。",
+                "supports": "报销必备的三项材料，以及出差费用的附加材料要求"
+              },
+              {
+                "doc_id": "D03",
+                "version_date": "2026-02-01",
+                "quote": "材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。",
+                "supports": "材料提交方式及图像清晰度、可识别交易日期和金额的要求"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T06A",
+      "run_id": "20261030T035008Z-0036bfdf",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035008Z-0036bfdf",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true,
+        "fault_observed": true,
+        "model_decision_after_failure": true,
+        "failure_not_model_api": true,
+        "recovered_read": true,
+        "recovered_citation": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "recovered",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status_in": [
+          "answered",
+          "tool_error"
+        ],
+        "required_evidence": [],
+        "constraints": [
+          "Trace 包含失败观察及模型后续选择",
+          "若回答成功，必须先成功重读 D01 且引用原文；事实应为 30 个自然日",
+          "若停止，说明读取失败及未核实的缺口",
+          "不能把执行器固定重试算作模型决策",
+          "安全停止与恢复成功分别统计"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "search_docs",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限 例外 特殊情形 替代",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 30 个自然日，自费用发生之日起计算，员工应在该期限内通过费用系统提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "报销期限为30个自然日，起算点为费用发生之日，并需在期限内通过费用系统提交申请。"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 5,
+      "tool_calls": 4
+    },
+    {
+      "case_id": "T06B",
+      "run_id": "20261030T035015Z-c1db72e0",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035015Z-c1db72e0",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true,
+        "fault_observed": true,
+        "model_decision_after_failure": true,
+        "failure_not_model_api": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "safe_stop",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "tool_error",
+        "required_evidence": [],
+        "constraints": [
+          "说明原文读取失败，无法核实期限",
+          "不得将检索摘要当作成功读取的引文",
+          "不得继续无界重试；耗尽预算则另记为预算停止而非本用例目标通过"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "由于对于记载报销期限的关键制度文档的读取操作失败（该工具返回了不可恢复的错误），本次无法核实报销期限的具体规则。",
+            "status": "tool_error",
+            "citations": [],
+            "conflicts": [],
+            "gaps": [
+              "缺少成功读取的报销期限制度原文",
+              "无法确认报销期限的天数、起算点及适用条件"
+            ],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "tool_error",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T07",
+      "run_id": "20261030T035019Z-c32315dc",
+      "mode": "real",
+      "snapshot_id": "b05231db7c80ba24cfbab19da651170f4f3b32294d4e0b69053db05c9204f4ce",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035019Z-c32315dc",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "45 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 45 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "不得继续回答旧值 30 天",
+          "场景装载与索引必须刷新",
+          "保留与 T01 的实际输出对比"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 45 个自然日，自费用发生之日起计算；员工应在该期限内通过费用系统提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 45 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "直接规定报销期限为45个自然日，起算点为费用发生之日，并要求在期限内提交报销申请。"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T08",
+      "run_id": "20261030T035023Z-d38926b1",
+      "mode": "real",
+      "snapshot_id": "5b79c4d555c901364332cf73cc15fd4496bff2808674584db340a3e5494996a6",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035023Z-d38926b1",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "needs_clarification",
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          },
+          {
+            "doc_id": "D02",
+            "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "新增 D02 后从明确回答转为冲突处理",
+          "对比 T01 与本次 Trace 的实际动作变化",
+          "不得只修改回答措辞而继续选定单一期限"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D02"
+          }
+        },
+        {
+          "action": "ask_user",
+          "arguments": {
+            "answer": "本次已读的两份制度对报销期限给出不同规定，且都写明“自费用发生之日起计算”：\n1)《费用报销提交规则》（2026-01-10）：报销期限为 30 个自然日。\n2)《费用报销办理说明》（2026-03-15）：报销期限为 15 个自然日。\n两份原文都未写明适用范围，也未声明废止或替代另一份，因此无法确定哪一份适用，不能仅凭日期较新就选择 15 个自然日。请确认适用哪份制度。",
+            "status": "needs_clarification",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                "supports": "《费用报销提交规则》规定的报销期限为30个自然日。"
+              },
+              {
+                "doc_id": "D02",
+                "version_date": "2026-03-15",
+                "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+                "supports": "《费用报销办理说明》规定的报销期限为15个自然日。"
+              }
+            ],
+            "conflicts": [
+              {
+                "conflict_id": "C-1891351497",
+                "topic": "报销期限为30个自然日还是15个自然日",
+                "citations": [
+                  {
+                    "doc_id": "D01",
+                    "version_date": "2026-01-10",
+                    "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                    "supports": "30个自然日一方。"
+                  },
+                  {
+                    "doc_id": "D02",
+                    "version_date": "2026-03-15",
+                    "quote": "报销期限为 15 个自然日，自费用发生之日起计算。",
+                    "supports": "15个自然日一方。"
+                  }
+                ],
+                "status": "unresolved",
+                "resolution": null
+              }
+            ],
+            "gaps": [
+              "两份制度均未写明适用范围及是否存在替代/废止关系，无法确定应适用哪一份的报销期限"
+            ],
+            "follow_up_question": "请问贵公司当前适用《费用报销提交规则》还是《费用报销办理说明》？或该报销事项属于哪个适用范围？"
+          }
+        }
+      ],
+      "status": "needs_clarification",
+      "model_turns": 4,
+      "tool_calls": 3
+    },
+    {
+      "case_id": "T09",
+      "run_id": "20261030T035029Z-63936a89",
+      "mode": "real",
+      "snapshot_id": "d03ee2820a1f2928b52c0d8182fa961f8dfd0ba522a6b31b2488f984bc3effe5",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035029Z-63936a89",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "insufficient_evidence",
+        "required_evidence": [],
+        "constraints": [
+          "说明资料缺少期限条款",
+          "不得回答 30、15 或 45 天",
+          "相关流程资料不能作为期限证据"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销提交时限 费用发生日期 起算 天数",
+            "top_k": 6
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "本次已读资料未能确认报销提交期限。已读取的《费用报销提交规则》只规定了报销申请的提交方式与填写内容，以及提交后的状态查询，未写明报销须在多长时间内提交；检索到的材料清单、住宿标准、审批说明等文档摘要也均标明不规定报销提交期限。",
+            "status": "insufficient_evidence",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+                "supports": "报销提交规则原文未载明提交期限"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [
+              "缺少明确规定报销提交期限（起算点与天数）的制度原文",
+              "本次已读资料未能确认是否存在其他专门规定报销期限的文档"
+            ],
+            "follow_up_question": "请问您需要确认的是哪类费用（如差旅费、日常费用）的报销期限？或能否提供可能规定该期限的制度名称，以便进一步查证？"
+          }
+        }
+      ],
+      "status": "insufficient_evidence",
+      "model_turns": 4,
+      "tool_calls": 3
+    },
+    {
+      "case_id": "T10",
+      "run_id": "20261030T035035Z-2e8ec073",
+      "mode": "mock",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035035Z-2e8ec073",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true,
+        "budget_stop": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "not_applicable_mock",
+      "review_requirements": {
+        "status": "incomplete",
+        "required_evidence": [],
+        "constraints": [
+          "不发起第三轮模型调用或第三次工具调用",
+          "明确说明预算耗尽",
+          "只证明工程上限，不证明真实模型决策效果"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "不存在的制度甲",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "不存在的制度乙",
+            "top_k": 5
+          }
+        }
+      ],
+      "status": "incomplete",
+      "model_turns": 2,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T11",
+      "run_id": "20261030T035036Z-8398060e",
+      "mode": "real",
+      "snapshot_id": "8af95d8ba9266f4f9b2cda49364dab69449c7ed51c22ed83c1f668891d9e4a57",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035036Z-8398060e",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "中国大陆境内每人每晚 400 元人民币",
+          "境外每人每晚 800 元人民币",
+          "按实际支出报销"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D05",
+            "quote": "本标准适用于中国大陆境内出差，不适用于境外出差。住宿费用按实际支出报销，每人每晚最高 400 元人民币。"
+          },
+          {
+            "doc_id": "D06",
+            "quote": "本标准适用于境外出差，不适用于中国大陆境内出差。住宿费用按实际支出报销，每人每晚最高 800 元人民币。"
+          }
+        ],
+        "constraints": [
+          "不得误判为无法解决的冲突",
+          "不得省略每人每晚的单位或表述为定额补贴"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "中国大陆境内出差 境外出差 每人每晚住宿报销上限",
+            "top_k": 8
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D05"
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D06"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "中国大陆境内出差：住宿费按实际支出报销，每人每晚最高 400 元人民币；该标准仅适用于中国大陆境内出差，不适用于境外出差。境外出差：住宿费按实际支出报销，每人每晚最高 800 元人民币；该标准仅适用于境外出差，不适用于中国大陆境内出差。两项标准均以人民币计，上限均为“每人每晚”。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D05",
+                "version_date": "2026-04-01",
+                "quote": "本标准适用于中国大陆境内出差，不适用于境外出差。住宿费用按实际支出报销，每人每晚最高 400 元人民币。",
+                "supports": "支持中国大陆境内出差住宿每人每晚上限400元人民币及其适用范围"
+              },
+              {
+                "doc_id": "D06",
+                "version_date": "2026-04-01",
+                "quote": "本标准适用于境外出差，不适用于中国大陆境内出差。住宿费用按实际支出报销，每人每晚最高 800 元人民币。",
+                "supports": "支持境外出差住宿每人每晚上限800元人民币及其适用范围"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 4,
+      "tool_calls": 3
+    },
+    {
+      "case_id": "T12",
+      "run_id": "20261030T035041Z-3dc4848f",
+      "mode": "real",
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035041Z-3dc4848f",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "自导出完成起 14 个自然日",
+          "满足 D12 的生效日期条件"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D12",
+            "quote": "自 2026 年 8 月 1 日起完成导出的云剪工作台临时导出文件，保留期调整为自导出完成起 14 个自然日。对于上述文件，本规则替代 D11 中的 7 个自然日保留规定。"
+          }
+        ],
+        "constraints": [
+          "依据原文替代条款与日期条件，不仅凭版本日期",
+          "不扩大为所有项目素材的保留期"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "云剪 临时视频文件 保留 导出 2026年9月10日",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D12"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "2026 年 9 月 10 日完成导出的云剪工作台临时导出文件，保留期为自导出完成起 14 个自然日。依据 2026 年 8 月 1 日起施行的修订规则，该规则适用于 2026 年 8 月 1 日起完成导出的临时导出文件，并替代原 7 个自然日的保留规定；2026 年 8 月 1 日之前完成导出的文件仍按原规定执行。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D12",
+                "version_date": "2026-08-01",
+                "quote": "自 2026 年 8 月 1 日起完成导出的云剪工作台临时导出文件，保留期调整为自导出完成起 14 个自然日。对于上述文件，本规则替代 D11 中的 7 个自然日保留规定。",
+                "supports": "9月10日导出适用14个自然日保留期，并替代原7日规定"
+              },
+              {
+                "doc_id": "D12",
+                "version_date": "2026-08-01",
+                "quote": "2026 年 8 月 1 日之前完成导出的临时文件仍按 D11 执行。",
+                "supports": "说明修订规则的适用范围起点"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T13",
+      "run_id": "20261030T035047Z-586dc4e7",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "improved",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035047Z-586dc4e7",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "单个上传文件不超过 500 MB"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D07",
+            "quote": "单个上传文件大小不得超过 500 MB。"
+          }
+        ],
+        "constraints": [
+          "不得误用导出分辨率作为上传大小",
+          "保留网页版和单文件的限定"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "云剪工作台 网页版 上传 单个视频 最大 大小",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D07"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "云剪工作台网页版单个上传文件大小不得超过 500 MB。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D07",
+                "version_date": "2026-05-10",
+                "quote": "单个上传文件大小不得超过 500 MB。",
+                "supports": "直接支持网页版单个上传视频/文件的最大大小为 500 MB。"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T01",
+      "run_id": "20261030T035053Z-085c3b60",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "baseline",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/baseline/20261030T035053Z-085c3b60",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "不得引用当前场景不可见的 D02",
+          "正式引用必须来自本次成功读取"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 30 个自然日，自费用发生之日起计算；员工应在该期限内提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。",
+                "supports": "报销期限时长、计算单位（自然日）及起算点（费用发生之日）"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2
+    },
+    {
+      "case_id": "T02",
+      "run_id": "20261030T035057Z-15306fef",
+      "mode": "real",
+      "snapshot_id": "5b79c4d555c901364332cf73cc15fd4496bff2808674584db340a3e5494996a6",
+      "retrieval_mode": "baseline",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/baseline/20261030T035057Z-15306fef",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "needs_clarification",
+        "required_facts": [
+          "D01 为 30 个自然日",
+          "D02 为 15 个自然日",
+          "现有资料无法确认适用范围或优先关系"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          },
+          {
+            "doc_id": "D02",
+            "quote": "报销期限为 15 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "请求确认适用制度",
+          "不得以版本更新或期限更短为由选定 D02",
+          "Trace 应体现读取双方依据及冲突查证；没有补充资料则如实说明"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销期限 报销申请 时限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用报销 提交 时间 规定",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D02"
+          }
+        },
+        {
+          "action": "ask_user",
+          "arguments": {
+            "answer": "本次检索到两份制度对报销期限规定不同，且均未写明适用范围或替代关系，无法判断以哪份为准：一是《费用报销提交规则》规定为 30 个自然日，自费用发生之日起计算；二是《费用报销办理说明》规定为 15 个自然日，自费用发生之日起计算。两份文件均要求员工在该期限内通过费用系统提交报销申请。",
+            "status": "needs_clarification",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "《费用报销提交规则》规定的报销期限为 30 个自然日，自费用发生之日起计算。"
+              },
+              {
+                "doc_id": "D02",
+                "version_date": "2026-03-15",
+                "quote": "报销期限为 15 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "《费用报销办理说明》规定的报销期限为 15 个自然日，自费用发生之日起计算。"
+              }
+            ],
+            "conflicts": [
+              {
+                "conflict_id": "C-1891351497",
+                "topic": "报销期限：30 个自然日与 15 个自然日",
+                "citations": [
+                  {
+                    "doc_id": "D01",
+                    "version_date": "2026-01-10",
+                    "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                    "supports": "规定 30 个自然日。"
+                  },
+                  {
+                    "doc_id": "D02",
+                    "version_date": "2026-03-15",
+                    "quote": "报销期限为 15 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                    "supports": "规定 15 个自然日。"
+                  }
+                ],
+                "status": "unresolved",
+                "resolution": null,
+                "resolution_citations": []
+              }
+            ],
+            "gaps": [
+              "两份文件均未写明适用范围、优先适用或替代条款，无法确定应适用哪一份制度",
+              "本次已读资料未能确认是否存在其他适用于特定费用类型或特定员工的报销期限规定"
+            ],
+            "follow_up_question": "请确认您适用哪一份制度：是《费用报销提交规则》的 30 个自然日，还是《费用报销办理说明》的 15 个自然日？或告知您所属单位/费用类型，以便确定适用制度。"
+          }
+        }
+      ],
+      "status": "needs_clarification",
+      "model_turns": 6,
+      "tool_calls": 5
+    },
+    {
+      "case_id": "T04",
+      "run_id": "20261030T035105Z-7572c7de",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "baseline",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/baseline/20261030T035105Z-7572c7de",
+      "checks": {
+        "status": false,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": false
+      },
+      "automatic_pass": false,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "每个改写问题独立运行",
+          "首次检索不足时允许模型改写查询",
+          "不要求固定动作顺序"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用发生以后 最迟多久 在系统申请报账 报销时限",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销 报账 时限 三个月 发票 期限",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用报销管理制度",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "财务 费用 申请 审批 流程",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "在本次已读资料中未能检索到任何与费用报账时限相关的制度原文，因此无法核实“费用发生后最迟多久需在系统申请报账”的具体规则。",
+            "status": "insufficient_evidence",
+            "citations": [],
+            "conflicts": [],
+            "gaps": [
+              "缺少费用报销/报账时限的制度原文（多为无命中检索）",
+              "无法确认报账时限的天数、起算点及适用条件"
+            ],
+            "follow_up_question": "请提供费用报销制度的文档名称或编号，以便定位报账时限条款。"
+          }
+        }
+      ],
+      "status": "insufficient_evidence",
+      "model_turns": 5,
+      "tool_calls": 4
+    },
+    {
+      "case_id": "T04-v1",
+      "run_id": "20261030T035112Z-2f75fdbb",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "baseline",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/baseline/20261030T035112Z-2f75fdbb",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "每个改写问题独立运行",
+          "首次检索不足时允许模型改写查询",
+          "不要求固定动作顺序"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销申请 最晚 提交 时限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用报销 提交期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销 发票 有效期限",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "费用报销申请的提交期限为 30 个自然日，自费用发生之日起计算；员工需在该期限内通过费用系统提交报销申请。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "支持报销申请须在费用发生之日起 30 个自然日内通过费用系统提交。\n"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [
+              "本次已读资料未说明起算日是否计入当日、截止时刻等计算边界，也未说明逾期未提交的处理后果。"
+            ],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 6,
+      "tool_calls": 5
+    },
+    {
+      "case_id": "T04-v2",
+      "run_id": "20261030T035121Z-87424004",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "baseline",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/baseline/20261030T035121Z-87424004",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "30 个自然日",
+          "自费用发生之日起计算"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D01",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+          }
+        ],
+        "constraints": [
+          "每个改写问题独立运行",
+          "首次检索不足时允许模型改写查询",
+          "不要求固定动作顺序"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "费用报销 提交 期限 天数",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销 时限 规定",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "报销",
+            "top_k": 8
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D01"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "报销期限为 30 个自然日，自费用发生之日起计算，员工应在该期限内通过费用系统提交报销申请。因此，费用发生后 30 个自然日内可以提交报销。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D01",
+                "version_date": "2026-01-10",
+                "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+                "supports": "报销提交期限为30个自然日，起算点为费用发生之日"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 5,
+      "tool_calls": 4
+    },
+    {
+      "case_id": "T13",
+      "run_id": "20261030T035127Z-c63f371c",
+      "mode": "real",
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f",
+      "retrieval_mode": "baseline",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/baseline/20261030T035127Z-c63f371c",
+      "checks": {
+        "status": true,
+        "budget": true,
+        "trace_complete": true,
+        "read_snapshots": true,
+        "citation_provenance": true,
+        "answered_has_citations": true,
+        "nonanswer_has_gaps": true,
+        "clarification_has_question": true,
+        "no_answered_conflicts": true,
+        "required_evidence_coverage": true
+      },
+      "automatic_pass": true,
+      "fault_outcome": "not_applicable",
+      "semantic_review": "pending",
+      "review_requirements": {
+        "status": "answered",
+        "required_facts": [
+          "单个上传文件不超过 500 MB"
+        ],
+        "required_evidence": [
+          {
+            "doc_id": "D07",
+            "quote": "单个上传文件大小不得超过 500 MB。"
+          }
+        ],
+        "constraints": [
+          "不得误用导出分辨率作为上传大小",
+          "保留网页版和单文件的限定"
+        ]
+      },
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "action_details": [
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "云剪工作台 网页版 上传 单个视频 最大 支持",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "云剪 视频上传大小限制",
+            "top_k": 5
+          }
+        },
+        {
+          "action": "search_docs",
+          "arguments": {
+            "query": "云剪工作台",
+            "top_k": 10
+          }
+        },
+        {
+          "action": "read_document",
+          "arguments": {
+            "doc_id": "D07"
+          }
+        },
+        {
+          "action": "finish",
+          "arguments": {
+            "answer": "云剪工作台网页版上传单个视频文件的大小不得超过 500 MB。",
+            "status": "answered",
+            "citations": [
+              {
+                "doc_id": "D07",
+                "version_date": "2026-05-10",
+                "quote": "单个上传文件大小不得超过 500 MB。",
+                "supports": "直接给出网页版单个视频上传的大小上限为 500 MB"
+              }
+            ],
+            "conflicts": [],
+            "gaps": [],
+            "follow_up_question": null
+          }
+        }
+      ],
+      "status": "answered",
+      "model_turns": 5,
+      "tool_calls": 4
+    }
+  ],
+  "complete": true,
+  "started_at": "2026-10-30T03:49:27.316660+00:00",
+  "finished_at": "2026-10-30T03:51:32.337690+00:00",
+  "semantic_review": "pending"
+}

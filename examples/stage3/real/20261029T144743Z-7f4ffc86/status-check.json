@@ -1,0 +1,8 @@
+{
+  "case_id": "T11",
+  "expected_statuses": [
+    "answered"
+  ],
+  "status_matches": true,
+  "semantic_review": "pending"
+}

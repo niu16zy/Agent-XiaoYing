@@ -1,0 +1,19 @@
+{
+  "answer": "当前任务未能完成。",
+  "status": "incomplete",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "模型决策轮数已耗尽。"
+  ],
+  "follow_up_question": null,
+  "run_id": "20261030T035035Z-2e8ec073",
+  "mode": "mock",
+  "model_turns": 2,
+  "tool_calls": 2,
+  "elapsed_seconds": 0.0,
+  "error": {
+    "source": "executor",
+    "code": "BUDGET_EXHAUSTED"
+  }
+}

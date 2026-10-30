@@ -1,0 +1,32 @@
+{
+  "answer": "报销申请最晚应在费用发生之日起 30 个自然日内提交。该期限按自然日计算，起算点为费用发生之日；员工需在该期限内通过费用系统提交报销申请。提交时还应填写费用发生日期、用途和金额，提交成功后可在费用系统查看处理状态。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "version_date": "2026-01-10",
+      "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+      "supports": "报销提交的最晚期限为费用发生日起 30 个自然日内",
+      "start": 0,
+      "end": 46,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    },
+    {
+      "doc_id": "D01",
+      "version_date": "2026-01-10",
+      "quote": "报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+      "supports": "提交报销申请需填写的信息及提交后的状态查询方式",
+      "start": 48,
+      "end": 86,
+      "snapshot_id": "847de7c98be718a35f56c414140573224b18bda5af86aacab3d8d092a868524f"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "follow_up_question": null,
+  "run_id": "20261030T034107Z-2d273837",
+  "mode": "real",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 4.203
+}

@@ -1,0 +1,87 @@
+{
+  "checks": {
+    "status": false,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": false
+  },
+  "automatic_pass": false,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "单个上传文件不超过 500 MB"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D07",
+        "quote": "单个上传文件大小不得超过 500 MB。"
+      }
+    ],
+    "constraints": [
+      "不得误用导出分辨率作为上传大小",
+      "保留网页版和单文件的限定"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "云剪工作台 网页版 上传单个视频 最大支持 大小",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "云剪 上传视频 大小限制",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "视频上传 文件大小上限",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "素材上传 限制",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "知识库中未检索到关于云剪工作台网页版上传单个视频大小上限的任何制度或说明，因此无法确认具体数值。",
+        "status": "insufficient_evidence",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "缺少云剪工作台网页版上传规格（单文件大小上限）的制度原文",
+          "缺少云剪产品上传功能说明或相关操作文档"
+        ],
+        "follow_up_question": "您能否提供云剪工作台上传规格文档的名称、链接或所在知识库目录，以便进一步核查？"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 5,
+  "tool_calls": 4
+}

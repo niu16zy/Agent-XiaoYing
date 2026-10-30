@@ -1,0 +1,14 @@
+{
+  "reviewer": "Codex AI",
+  "batch_accepted": false,
+  "findings": [
+    {
+      "case_id": "T09",
+      "result": "fail",
+      "reason": "结论资料不足正确，但附加未读取文档摘要断言；增加校验后另批补验。"
+    }
+  ],
+  "baseline_automatic_passes": 5,
+  "baseline_runs": 6,
+  "latest_results": "../verification.json"
+}

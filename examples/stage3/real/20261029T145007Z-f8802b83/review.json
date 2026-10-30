@@ -1,0 +1,19 @@
+{
+  "case_id": "T02",
+  "run_id": "20261029T145007Z-f8802b83",
+  "status": "needs_clarification",
+  "model_turns": 4,
+  "tool_calls": 3,
+  "citation_provenance": "passed",
+  "semantic_review": "passed",
+  "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+  "note": "引用D01/D02，保留30/15天差异，不以日期选择优先规则，返回追问。",
+  "actions": [
+    "search_docs",
+    "read_document",
+    "read_document",
+    "ask_user"
+  ],
+  "invalid_responses": 0,
+  "tool_failures": 0
+}

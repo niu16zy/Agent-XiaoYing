@@ -1,0 +1,90 @@
+{
+  "checks": {
+    "status": false,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": false
+  },
+  "automatic_pass": false,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "30 个自然日",
+      "自费用发生之日起计算"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "每个改写问题独立运行",
+      "首次检索不足时允许模型改写查询",
+      "不要求固定动作顺序"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "search_docs",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销 提交 期限 多少天 花完 这笔钱",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销 期限",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销管理办法",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "发票 报销 天",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "未能检索到任何与费用报销提交期限相关的制度或文档（多次不同关键词检索命中数均为 0），因此无法确认报销提交的天数，也无法确认起算点（如消费日、发票开具日或报销单提交日）。请补充提供相关制度文档，或明确适用的制度名称。",
+        "status": "insufficient_evidence",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "知识库中缺少费用报销提交期限的制度原文（检索“费用报销 提交 期限 多少天”“报销 期限”“费用报销管理办法”“发票 报销 天”均无命中）",
+          "缺少报销期限的起算点规定（消费日/发票开具日/月末等）",
+          "缺少自然日还是工作日的限定说明"
+        ],
+        "follow_up_question": "请问贵司适用哪份报销制度（制度名称或编号）？或能否提供规定报销提交期限的文档？"
+      }
+    }
+  ],
+  "status": "insufficient_evidence",
+  "model_turns": 5,
+  "tool_calls": 4
+}

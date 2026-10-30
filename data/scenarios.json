@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "default_scenario": "baseline",
+  "scenarios": [
+    {
+      "scenario_id": "baseline",
+      "description": "单一报销期限依据；默认演示语料，不含 D02。",
+      "include_doc_ids": ["D01", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12"],
+      "overrides": []
+    },
+    {
+      "scenario_id": "conflict",
+      "description": "相较 baseline 只增加 D02，检验新增冲突是否改变行为。",
+      "include_doc_ids": ["D01", "D02", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12"],
+      "overrides": []
+    },
+    {
+      "scenario_id": "deadline_45",
+      "description": "相较 baseline 只替换 D01 正文，保留 ID 和日期以检验内容依赖与缓存失效。",
+      "include_doc_ids": ["D01", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12"],
+      "overrides": [
+        {
+          "doc_id": "D01",
+          "content": "报销期限为 45 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。\n\n报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。"
+        }
+      ]
+    },
+    {
+      "scenario_id": "deadline_missing",
+      "description": "相较 baseline 删除 D01 中的期限依据，其他资料不变。",
+      "include_doc_ids": ["D01", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12"],
+      "overrides": [
+        {
+          "doc_id": "D01",
+          "content": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。"
+        }
+      ]
+    },
+    {
+      "scenario_id": "scope_rules",
+      "description": "仅包含住宿适用范围规则和材料清单，用于检查范围区分。",
+      "include_doc_ids": ["D03", "D05", "D06"],
+      "overrides": []
+    },
+    {
+      "scenario_id": "explicit_revision",
+      "description": "包含有明确替代条件的两个版本，另含产品干扰文档。",
+      "include_doc_ids": ["D07", "D08", "D09", "D11", "D12"],
+      "overrides": []
+    }
+  ]
+}

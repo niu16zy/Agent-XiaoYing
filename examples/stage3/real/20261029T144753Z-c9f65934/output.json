@@ -1,0 +1,50 @@
+{
+  "answer": "2026 年 9 月 10 日完成导出的云剪工作台临时视频文件保留 14 个自然日，自导出完成起算，期满后自动清理。该期限适用于 2026 年 8 月 1 日起完成导出的临时导出文件；D12 已明确替代 D11 中 7 个自然日的规定，而 2026 年 8 月 1 日之前完成导出的文件仍按 D11 的 7 个自然日执行。需要长期保存的，应在保留期内下载。",
+  "status": "answered",
+  "citations": [
+    {
+      "doc_id": "D12",
+      "version_date": "2026-08-01",
+      "quote": "自 2026 年 8 月 1 日起完成导出的云剪工作台临时导出文件，保留期调整为自导出完成起 14 个自然日。",
+      "supports": "2026 年 9 月 10 日导出的文件适用 14 个自然日保留期，自导出完成起算。",
+      "start": 0,
+      "end": 55,
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10"
+    },
+    {
+      "doc_id": "D12",
+      "version_date": "2026-08-01",
+      "quote": "对于上述文件，本规则替代 D11 中的 7 个自然日保留规定。",
+      "supports": "说明 D12 的 14 天规则明确替代 D11 的 7 天规则，冲突已由替代条款消解。",
+      "start": 55,
+      "end": 86,
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10"
+    },
+    {
+      "doc_id": "D12",
+      "version_date": "2026-08-01",
+      "quote": "2026 年 8 月 1 日之前完成导出的临时文件仍按 D11 执行。",
+      "supports": "明确旧规则的适用范围，排除对 2026 年 9 月 10 日导出文件的适用。",
+      "start": 88,
+      "end": 123,
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10"
+    },
+    {
+      "doc_id": "D11",
+      "version_date": "2026-01-20",
+      "quote": "员工需要长期保存时，应在保留期内下载文件。",
+      "supports": "提示长期保存需在保留期内下载。",
+      "start": 36,
+      "end": 57,
+      "snapshot_id": "97bef73a7b5a841f697812f24db0e7923a706a7ed7be08bd5e4fff1b59404b10"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "follow_up_question": null,
+  "run_id": "20261029T144753Z-c9f65934",
+  "mode": "real",
+  "model_turns": 7,
+  "tool_calls": 3,
+  "elapsed_seconds": 19.719
+}

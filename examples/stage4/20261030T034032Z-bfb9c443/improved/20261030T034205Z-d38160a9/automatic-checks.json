@@ -1,0 +1,81 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "自导出完成起 14 个自然日",
+      "满足 D12 的生效日期条件"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D12",
+        "quote": "自 2026 年 8 月 1 日起完成导出的云剪工作台临时导出文件，保留期调整为自导出完成起 14 个自然日。对于上述文件，本规则替代 D11 中的 7 个自然日保留规定。"
+      }
+    ],
+    "constraints": [
+      "依据原文替代条款与日期条件，不仅凭版本日期",
+      "不扩大为所有项目素材的保留期"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "云剪 临时视频文件 导出 保留 时长",
+        "top_k": 8
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D12"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "2026 年 9 月 10 日完成导出的云剪工作台临时导出文件，保留期为自导出完成起 14 个自然日，即保留至 2026 年 9 月 24 日（含当日；期满后自动清理，需长期保存应在保留期内下载）。该规则适用于 2026 年 8 月 1 日及以后完成导出的文件，并明确替代原 7 个自然日的规定。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D12",
+            "version_date": "2026-08-01",
+            "quote": "自 2026 年 8 月 1 日起完成导出的云剪工作台临时导出文件，保留期调整为自导出完成起 14 个自然日。",
+            "supports": "确定 2026 年 9 月 10 日导出文件的保留期限为自导出完成起 14 个自然日。"
+          },
+          {
+            "doc_id": "D12",
+            "version_date": "2026-08-01",
+            "quote": "对于上述文件，本规则替代 D11 中的 7 个自然日保留规定。",
+            "supports": "说明本案适用 14 个自然日而非 D11 的 7 个自然日。"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "answered",
+  "model_turns": 4,
+  "tool_calls": 2
+}

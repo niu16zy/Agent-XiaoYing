@@ -1,0 +1,91 @@
+{
+  "verified_at": "2026-10-30T03:47:28.022629+00:00",
+  "venv_created_from_scratch": true,
+  "initial_install": "Failed hash verification while jiter download was incomplete; kept verification enabled.",
+  "retry_install": "pip install --no-cache-dir -e .[model,dev] succeeded; full log install-retry.log",
+  "commands": [
+    {
+      "command": [
+        "D:\\Desktop\\小影笔试\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "pass": true,
+      "stdout": "No broken requirements found.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "D:\\Desktop\\小影笔试\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=examples/stage4/venv-tests.xml"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "pass": true,
+      "stdout": "................s....................................................... [ 67%]\n...................................                                      [100%]\n106 passed, 1 skipped in 2.60s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "D:\\Desktop\\小影笔试\\.venv\\Scripts\\knowledge-agent.exe",
+        "--mode",
+        "mock",
+        "--question",
+        "报销期限多久？",
+        "--format",
+        "text",
+        "--output-dir",
+        "examples/stage4/installation-smoke"
+      ],
+      "returncode": 2,
+      "expected_returncode": 2,
+      "pass": true,
+      "stdout": "离线 Mock：仅验证流程，不证明真实模型决策效果。\n任务状态：未完成\n\n离线流程演示已结束；Mock 不生成可作为业务结论的答案。\n\n资料缺口：\n- 需要真实模型判断证据与业务结论\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "D:\\Desktop\\小影笔试\\.venv\\Scripts\\python.exe",
+        "-m",
+        "knowledge_agent",
+        "--mode",
+        "mock",
+        "--question",
+        "报销期限多久？",
+        "--output-dir",
+        "examples/stage4/installation-smoke"
+      ],
+      "returncode": 2,
+      "expected_returncode": 2,
+      "pass": true,
+      "stdout": "{\n  \"answer\": \"离线流程演示已结束；Mock 不生成可作为业务结论的答案。\",\n  \"status\": \"incomplete\",\n  \"citations\": [],\n  \"conflicts\": [],\n  \"gaps\": [\n    \"需要真实模型判断证据与业务结论\"\n  ],\n  \"follow_up_question\": null,\n  \"run_id\": \"20261030T034727Z-1c0344a3\",\n  \"mode\": \"mock\",\n  \"model_turns\": 3,\n  \"tool_calls\": 2,\n  \"elapsed_seconds\": 0.0,\n  \"artifact_dir\": \"D:\\\\Desktop\\\\小影笔试\\\\examples\\\\stage4\\\\installation-smoke\\\\20261030T034727Z-1c0344a3\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "D:\\Desktop\\小影笔试\\.venv\\Scripts\\python.exe",
+        "scripts/evaluate.py",
+        "--output-dir",
+        "examples/stage4/offline-verification"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "pass": true,
+      "stdout": "{\"case_id\": \"T10\", \"retrieval_mode\": \"improved\", \"status\": \"incomplete\", \"automatic_pass\": true, \"run_id\": \"20261030T034727Z-6f9507b9\"}\n{\"batch_dir\": \"examples\\\\stage4\\\\offline-verification\\\\20261030T034727Z-afa33a2c\", \"note\": \"Automatic checks are not semantic acceptance.\"}\n",
+      "stderr": ""
+    }
+  ],
+  "latest_tests": "venv-tests.xml: 108 passed, 1 opt-in skipped",
+  "fresh_venv_real_connection": {
+    "status": "connected",
+    "model": "deepseek-flash",
+    "command": ".venv/Scripts/python.exe scripts/check_model_connection.py"
+  },
+  "initial_test_output_is_historical": true
+}

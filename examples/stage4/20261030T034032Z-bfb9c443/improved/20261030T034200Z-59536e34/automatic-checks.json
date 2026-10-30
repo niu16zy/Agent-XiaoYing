@@ -1,0 +1,93 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "中国大陆境内每人每晚 400 元人民币",
+      "境外每人每晚 800 元人民币",
+      "按实际支出报销"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D05",
+        "quote": "本标准适用于中国大陆境内出差，不适用于境外出差。住宿费用按实际支出报销，每人每晚最高 400 元人民币。"
+      },
+      {
+        "doc_id": "D06",
+        "quote": "本标准适用于境外出差，不适用于中国大陆境内出差。住宿费用按实际支出报销，每人每晚最高 800 元人民币。"
+      }
+    ],
+    "constraints": [
+      "不得误判为无法解决的冲突",
+      "不得省略每人每晚的单位或表述为定额补贴"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "read_document",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "出差 住宿费 报销 上限 每人每晚 境内 境外",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D05"
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D06"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "按现行标准：\n1. 中国大陆境内出差：住宿费按实际支出报销，每人每晚最高 400 元人民币；该标准不适用于境外出差。\n2. 境外出差：住宿费按实际支出报销，每人每晚最高 800 元人民币；该标准不适用于中国大陆境内出差。\n两项标准适用范围互斥，按出差地分别适用，不构成冲突。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D05",
+            "version_date": "2026-04-01",
+            "quote": "本标准适用于中国大陆境内出差，不适用于境外出差。住宿费用按实际支出报销，每人每晚最高 400 元人民币。",
+            "supports": "境内出差住宿费每人每晚最高 400 元人民币，且该标准仅适用境内"
+          },
+          {
+            "doc_id": "D06",
+            "version_date": "2026-04-01",
+            "quote": "本标准适用于境外出差，不适用于中国大陆境内出差。住宿费用按实际支出报销，每人每晚最高 800 元人民币。",
+            "supports": "境外出差住宿费每人每晚最高 800 元人民币，且该标准仅适用境外"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "answered",
+  "model_turns": 4,
+  "tool_calls": 3
+}

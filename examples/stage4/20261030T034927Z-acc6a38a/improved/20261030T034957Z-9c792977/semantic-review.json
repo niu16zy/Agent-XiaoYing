@@ -1,0 +1,12 @@
+{
+  "reviewer": "Codex AI; not independent candidate review",
+  "case_id": "T04-v2",
+  "run_id": "20261030T034957Z-9c792977",
+  "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034957Z-9c792977",
+  "mode": "real",
+  "status": "answered",
+  "automatic_pass": true,
+  "semantic_review": "pass",
+  "review_note": "独立运行，花完钱后提交问法正确引用D01。",
+  "output_sha256": "ee45260c35c8d50c223cf09d5611b4e00e621951995b378e20b1a2d454b6bf61"
+}

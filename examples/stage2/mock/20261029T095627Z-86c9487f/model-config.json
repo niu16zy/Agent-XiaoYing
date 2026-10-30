@@ -1,0 +1,7 @@
+{
+  "mode": "mock",
+  "model": "offline-observation-demo",
+  "endpoint": null,
+  "sdk_retries": 0,
+  "response_format": null
+}

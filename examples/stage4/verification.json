@@ -1,0 +1,198 @@
+{
+  "reviewed_at": "2026-10-30T03:54:21.866248+00:00",
+  "reviewer": "Codex AI; candidate independent review not supplied",
+  "latest_real_cases": 15,
+  "latest_real_automatic_passes": 15,
+  "latest_real_semantic_passes": 15,
+  "mock_budget_cases": 1,
+  "real_run_attempts_in_stage4": 65,
+  "not_a_single_batch": true,
+  "latest_batch": "examples\\stage4\\20261030T034927Z-acc6a38a",
+  "followup_batch": "examples\\stage4\\20261030T035227Z-15c2e5e1",
+  "rows": [
+    {
+      "case_id": "T01",
+      "run_id": "20261030T034930Z-907c44b6",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034930Z-907c44b6",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "30个自然日、费用发生日起算和提交要求均有对应引文。",
+      "output_sha256": "806fe94770ac9634430a569a55f5d1b8a2466f02beb3a340031dd23a07529da7"
+    },
+    {
+      "case_id": "T02",
+      "run_id": "20261030T034934Z-13aa0891",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034934Z-13aa0891",
+      "mode": "real",
+      "status": "needs_clarification",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "读取D01/D02并补充检索适用/替代关系，保留30与15冲突，追问，不以日期选制度。",
+      "output_sha256": "9068c1ef2eeff1c0cbd1f08cf3f474d9acbc3f7534ff7fef594b89c1c3e7abac"
+    },
+    {
+      "case_id": "T03",
+      "run_id": "20261030T034942Z-f65e987d",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034942Z-f65e987d",
+      "mode": "real",
+      "status": "insufficient_evidence",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "读D10确认不含天数标准，说明缺口，没有用外部法规猜测天数。",
+      "output_sha256": "690755e8bb9797f20bba7cc4d50b6660188f756b4d7087673a2a2566d283139a"
+    },
+    {
+      "case_id": "T04",
+      "run_id": "20261030T034949Z-72aa0f25",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034949Z-72aa0f25",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "改写报账问法，回答30个自然日并引用起算点、提交方式。",
+      "output_sha256": "583a840e61160fc2c48561e69a86ab9e6640a9e61ab48803fa7954f2c5e92562"
+    },
+    {
+      "case_id": "T04-v1",
+      "run_id": "20261030T034953Z-fb111a92",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034953Z-fb111a92",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "独立运行，最晚几天问法正确引用D01。",
+      "output_sha256": "c1491ab419a591054660c8cc90b8391ea41443e2400a009d94b6e72e4b4c70aa"
+    },
+    {
+      "case_id": "T04-v2",
+      "run_id": "20261030T034957Z-9c792977",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034957Z-9c792977",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "独立运行，花完钱后提交问法正确引用D01。",
+      "output_sha256": "ee45260c35c8d50c223cf09d5611b4e00e621951995b378e20b1a2d454b6bf61"
+    },
+    {
+      "case_id": "T05",
+      "run_id": "20261030T035001Z-35d83877",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035001Z-35d83877",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "用历史识别报销主题，重新读取D03，保留出差申请仅适用于出差费用的条件。",
+      "output_sha256": "2b4fe9633819628ab438217c328f6694d8d67585bb6c2b1c365b1587003f87f6"
+    },
+    {
+      "case_id": "T06A",
+      "run_id": "20261030T035008Z-0036bfdf",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035008Z-0036bfdf",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "Trace先观察临时失败，模型主动重读成功，再引用D01回答30天；统计为恢复。",
+      "output_sha256": "aa3309f720073a93d3e950c3b397b955da9766525b599f53e946602677f9528f"
+    },
+    {
+      "case_id": "T06B",
+      "run_id": "20261030T035230Z-0e25b25e",
+      "artifact_dir": "examples/stage4/20261030T035227Z-15c2e5e1/improved/20261030T035230Z-0e25b25e",
+      "mode": "real",
+      "status": "tool_error",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "不可恢复失败后停止，未把摘要中候选数值作为答复，引用为空，说明缺口；统计为安全停止。",
+      "output_sha256": "bea3cceb719c2f34c343f4cf12dcaf87bfe50a860f581342a9c7a9b003bdcee2"
+    },
+    {
+      "case_id": "T07",
+      "run_id": "20261030T035019Z-c32315dc",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035019Z-c32315dc",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "同ID同日期的D01正文换成45，快照与答案一起改变，不复用30。",
+      "output_sha256": "0e89c3803c73c6bfa806f62fca11c579284a04d154d29794bc4a80aa3898ce8f"
+    },
+    {
+      "case_id": "T08",
+      "run_id": "20261030T035023Z-d38926b1",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035023Z-d38926b1",
+      "mode": "real",
+      "status": "needs_clarification",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "同问题新增D02后读取双方并追问，最终状态从answered变needs_clarification。",
+      "output_sha256": "49915ad03d23c05091c0280936bd5aa0d7fc171503ab2ac73591de17e66cb68f"
+    },
+    {
+      "case_id": "T09",
+      "run_id": "20261030T035235Z-03970ba3",
+      "artifact_dir": "examples/stage4/20261030T035227Z-15c2e5e1/improved/20261030T035235Z-03970ba3",
+      "mode": "real",
+      "status": "insufficient_evidence",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "D01删除期限后只说明资料不足，引用替换后的全文，不复用30/15/45；最新补验不再转述摘要。",
+      "output_sha256": "477156d0cf2dea8a8c18f1839db617109ebb7fe4564abd62d05105b3670e75c9"
+    },
+    {
+      "case_id": "T10",
+      "run_id": "20261030T035035Z-2e8ec073",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035035Z-2e8ec073",
+      "mode": "mock",
+      "status": "incomplete",
+      "automatic_pass": true,
+      "semantic_review": "not_applicable_mock",
+      "review_note": "Mock只证明2轮2工具上限，明确incomplete，不作为真实语义证据。",
+      "output_sha256": "da86855d78ca57c65f013e512a8b277183078e56da88ed07402b1d8cd4630d3c"
+    },
+    {
+      "case_id": "T11",
+      "run_id": "20261030T035036Z-8398060e",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035036Z-8398060e",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "400/800人民币、每人每晚、实际支出和境内/境外适用条件均保留。",
+      "output_sha256": "24eff24e50a6127e43df41694efdcdc5b89aa7b46493a545af19a489751780e4"
+    },
+    {
+      "case_id": "T12",
+      "run_id": "20261030T035041Z-3dc4848f",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035041Z-3dc4848f",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "根据D12生效日期及显式替代条款适用14自然日；未虚构具体到期日或含当日。",
+      "output_sha256": "167c9fd72e823c13a767b1fc2518e7a43fbb5398fdf81f8f0951f8ffc018c57c"
+    },
+    {
+      "case_id": "T13",
+      "run_id": "20261030T035047Z-586dc4e7",
+      "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T035047Z-586dc4e7",
+      "mode": "real",
+      "status": "answered",
+      "automatic_pass": true,
+      "semantic_review": "pass",
+      "review_note": "网页版单文件500MB，未混淆导出分辨率。",
+      "output_sha256": "70284a563789422dd2bb5dbaf968bf441c6bc0bd5b42bbc4ec4b1f3532e63d33"
+    }
+  ],
+  "test_summary": "108 passed, 1 live opt-in skipped",
+  "limitations": [
+    "All cases are synthetic development cases, no held-out or repeat-run stability estimate.",
+    "Citation provenance plus lexical guards are not general semantic entailment.",
+    "Earlier failed outputs remain in historical batches and must not be counted as passed.",
+    "Exact total active exam time was not tracked; use recorded intervals only.",
+    "GitHub network unavailable at verification time; local completion is not remote submission."
+  ]
+}

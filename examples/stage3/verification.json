@@ -1,0 +1,484 @@
+{
+  "review_date": "2026-10-30",
+  "execution_date": "2026-10-29",
+  "stage": 3,
+  "status": "complete",
+  "unit_tests": {
+    "passed": 85,
+    "source": "examples/stage3/tests.xml"
+  },
+  "real_model": "deepseek-flash",
+  "attempts": 14,
+  "distinct_cases": 10,
+  "selected_latest_passed": 10,
+  "cases": [
+    {
+      "case_id": "T01",
+      "run_id": "20261029T145002Z-2983b4bb",
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "期限为30个自然日，保留起算点，引用D01。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 0,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T02",
+      "run_id": "20261029T145007Z-f8802b83",
+      "status": "needs_clarification",
+      "model_turns": 4,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "引用D01/D02，保留30/15天差异，不以日期选择优先规则，返回追问。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ],
+      "invalid_responses": 0,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T03",
+      "run_id": "20261029T144630Z-84b82991",
+      "status": "insufficient_evidence",
+      "model_turns": 5,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "只给出资料缺口，没有补造育儿假天数。",
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T04",
+      "run_id": "20261029T144639Z-f48e3b8d",
+      "status": "answered",
+      "model_turns": 4,
+      "tool_calls": 2,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "主改写输入召回D01并回答30个自然日；两个额外改写待阶段四。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T05",
+      "run_id": "20261029T145013Z-08f3fcd0",
+      "status": "answered",
+      "model_turns": 7,
+      "tool_calls": 5,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "修复后正确继承报销主题，引用本次读取的材料要求，不再沿用上轮期限结论。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "read_document",
+        "finish",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T06A",
+      "run_id": "20261029T144701Z-efcfeb4c",
+      "status": "answered",
+      "model_turns": 5,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "读取首次失败后由模型选择重试，成功读取后回答；属于恢复成功。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 1
+    },
+    {
+      "case_id": "T06B",
+      "run_id": "20261029T145029Z-16320a0c",
+      "status": "tool_error",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "修复后在不可恢复读取错误后停止，返回tool_error，未把摘要当作正式引文。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 0,
+      "tool_failures": 1
+    },
+    {
+      "case_id": "T09",
+      "run_id": "20261029T144727Z-68426c9c",
+      "status": "insufficient_evidence",
+      "model_turns": 7,
+      "tool_calls": 4,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "删除期限依据后明确资料不足，不复用30天答案。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 2,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T11",
+      "run_id": "20261029T144743Z-7f4ffc86",
+      "status": "answered",
+      "model_turns": 5,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "区分境内400元与境外800元，每人每晚、实际支出及适用范围均保留。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T12",
+      "run_id": "20261029T144753Z-c9f65934",
+      "status": "answered",
+      "model_turns": 7,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "按照D12明确替代条款及生效条件回答14个自然日，未仅按版本日期选择。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 3,
+      "tool_failures": 0
+    }
+  ],
+  "all_attempts": [
+    {
+      "case_id": "T01",
+      "run_id": "20261029T144607Z-50d46172",
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "期限为30个自然日，保留起算点，引用D01。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 0,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T02",
+      "run_id": "20261029T144612Z-fa8d52d8",
+      "status": "needs_clarification",
+      "model_turns": 8,
+      "tool_calls": 4,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "引用D01/D02，保留30/15天差异，不以日期选择优先规则，返回追问。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "search_docs",
+        "ask_user"
+      ],
+      "invalid_responses": 3,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T03",
+      "run_id": "20261029T144630Z-84b82991",
+      "status": "insufficient_evidence",
+      "model_turns": 5,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "只给出资料缺口，没有补造育儿假天数。",
+      "actions": [
+        "search_docs",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T04",
+      "run_id": "20261029T144639Z-f48e3b8d",
+      "status": "answered",
+      "model_turns": 4,
+      "tool_calls": 2,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "主改写输入召回D01并回答30个自然日；两个额外改写待阶段四。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T05",
+      "run_id": "20261029T144645Z-eb043c6c",
+      "status": "answered",
+      "model_turns": 7,
+      "tool_calls": 4,
+      "citation_provenance": "passed",
+      "semantic_review": "failed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "首轮T05额外沿用历史期限结论，未重新读取该依据；已修复后重跑。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 2,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T06A",
+      "run_id": "20261029T144701Z-efcfeb4c",
+      "status": "answered",
+      "model_turns": 5,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "读取首次失败后由模型选择重试，成功读取后回答；属于恢复成功。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 1
+    },
+    {
+      "case_id": "T06B",
+      "run_id": "20261029T144708Z-50590a8d",
+      "status": "incomplete",
+      "model_turns": 8,
+      "tool_calls": 4,
+      "citation_provenance": "passed",
+      "semantic_review": "failed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "首轮T06B多次格式错误，预算耗尽为incomplete，未达到tool_error目标；已修复后重跑。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "read_document"
+      ],
+      "invalid_responses": 4,
+      "tool_failures": 2
+    },
+    {
+      "case_id": "T09",
+      "run_id": "20261029T144727Z-68426c9c",
+      "status": "insufficient_evidence",
+      "model_turns": 7,
+      "tool_calls": 4,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "删除期限依据后明确资料不足，不复用30天答案。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 2,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T11",
+      "run_id": "20261029T144743Z-7f4ffc86",
+      "status": "answered",
+      "model_turns": 5,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "区分境内400元与境外800元，每人每晚、实际支出及适用范围均保留。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T12",
+      "run_id": "20261029T144753Z-c9f65934",
+      "status": "answered",
+      "model_turns": 7,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "按照D12明确替代条款及生效条件回答14个自然日，未仅按版本日期选择。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 3,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T01",
+      "run_id": "20261029T145002Z-2983b4bb",
+      "status": "answered",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "期限为30个自然日，保留起算点，引用D01。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 0,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T02",
+      "run_id": "20261029T145007Z-f8802b83",
+      "status": "needs_clarification",
+      "model_turns": 4,
+      "tool_calls": 3,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "引用D01/D02，保留30/15天差异，不以日期选择优先规则，返回追问。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ],
+      "invalid_responses": 0,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T05",
+      "run_id": "20261029T145013Z-08f3fcd0",
+      "status": "answered",
+      "model_turns": 7,
+      "tool_calls": 5,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "修复后正确继承报销主题，引用本次读取的材料要求，不再沿用上轮期限结论。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "read_document",
+        "finish",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 1,
+      "tool_failures": 0
+    },
+    {
+      "case_id": "T06B",
+      "run_id": "20261029T145029Z-16320a0c",
+      "status": "tool_error",
+      "model_turns": 3,
+      "tool_calls": 2,
+      "citation_provenance": "passed",
+      "semantic_review": "passed",
+      "reviewer": "Codex review of actual output and evidence; not candidate independent review",
+      "note": "修复后在不可恢复读取错误后停止，返回tool_error，未把摘要当作正式引文。",
+      "actions": [
+        "search_docs",
+        "read_document",
+        "finish"
+      ],
+      "invalid_responses": 0,
+      "tool_failures": 1
+    }
+  ],
+  "secret_scan": "passed",
+  "limitations": [
+    "Single-run selected-case validation, not a stability estimate",
+    "Automatic conflict detection covers same-sentence numeric differences only; other semantic conflicts rely on model identification",
+    "Resolution keyword and source checks cannot prove semantic entailment; model and reviewer judgement remain necessary",
+    "Extra paraphrases, content mutation comparison and final packaging remain in stage 4"
+  ]
+}

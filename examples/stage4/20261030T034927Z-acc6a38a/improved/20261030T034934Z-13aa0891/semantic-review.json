@@ -1,0 +1,12 @@
+{
+  "reviewer": "Codex AI; not independent candidate review",
+  "case_id": "T02",
+  "run_id": "20261030T034934Z-13aa0891",
+  "artifact_dir": "examples/stage4/20261030T034927Z-acc6a38a/improved/20261030T034934Z-13aa0891",
+  "mode": "real",
+  "status": "needs_clarification",
+  "automatic_pass": true,
+  "semantic_review": "pass",
+  "review_note": "读取D01/D02并补充检索适用/替代关系，保留30与15冲突，追问，不以日期选制度。",
+  "output_sha256": "9068c1ef2eeff1c0cbd1f08cf3f474d9acbc3f7534ff7fef594b89c1c3e7abac"
+}

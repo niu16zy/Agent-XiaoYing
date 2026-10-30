@@ -1,0 +1,7 @@
+{
+  "tool": "read_document",
+  "match_args": {"doc_id": "D01"},
+  "mode": "first_matching_call",
+  "error_code": "TEMPORARY_FAILURE",
+  "retryable": true
+}

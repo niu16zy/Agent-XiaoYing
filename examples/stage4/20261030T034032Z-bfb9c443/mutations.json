@@ -1,0 +1,86 @@
+[
+  {
+    "baseline": "T01",
+    "changed": "T07",
+    "baseline_run": "20261030T034036Z-e6105f30",
+    "changed_run": "20261030T034139Z-f089e6d9",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "answered"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pending"
+  },
+  {
+    "baseline": "T01",
+    "changed": "T08",
+    "baseline_run": "20261030T034036Z-e6105f30",
+    "changed_run": "20261030T034143Z-be306939",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "needs_clarification"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "read_document",
+        "ask_user"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pending"
+  },
+  {
+    "baseline": "T01",
+    "changed": "T09",
+    "baseline_run": "20261030T034036Z-e6105f30",
+    "changed_run": "20261030T034150Z-9be09428",
+    "snapshot_changed": true,
+    "statuses": [
+      "answered",
+      "insufficient_evidence"
+    ],
+    "action_sequences": [
+      [
+        "search_docs",
+        "read_document",
+        "finish",
+        "finish"
+      ],
+      [
+        "search_docs",
+        "read_document",
+        "search_docs",
+        "read_document",
+        "finish"
+      ]
+    ],
+    "action_details_changed": true,
+    "automatic_checks_pass": true,
+    "semantic_review": "pending"
+  }
+]

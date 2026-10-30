@@ -1,0 +1,19 @@
+{
+  "answer": "离线演示：工具调用失败，未能完成核实。",
+  "status": "tool_error",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "缺少可成功读取的原文"
+  ],
+  "follow_up_question": null,
+  "run_id": "20261029T095627Z-86c9487f",
+  "mode": "mock",
+  "model_turns": 3,
+  "tool_calls": 2,
+  "elapsed_seconds": 0.0,
+  "error": {
+    "source": "business_tool",
+    "code": "UNRESOLVED_TOOL_FAILURE"
+  }
+}

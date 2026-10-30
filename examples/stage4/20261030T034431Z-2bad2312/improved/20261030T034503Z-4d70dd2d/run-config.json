@@ -1,0 +1,13 @@
+{
+  "case_id": "T03",
+  "scenario": "baseline",
+  "retrieval_mode": "improved",
+  "fault": null,
+  "limits": {
+    "max_model_turns": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 90,
+    "tool_timeout": 5,
+    "total_timeout": 300
+  }
+}

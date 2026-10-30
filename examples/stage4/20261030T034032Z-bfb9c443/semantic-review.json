@@ -1,0 +1,40 @@
+{
+  "reviewer": "Codex AI; not candidate independent review",
+  "reviewed_at": "2026-10-30T03:46:10.710382+00:00",
+  "batch_accepted": false,
+  "automatic_status_and_provenance_passed": true,
+  "findings": [
+    {
+      "case_id": "T04",
+      "retrieval_mode": "improved",
+      "semantic_result": "fail",
+      "reason": "答案附加“提交成功后可查看处理状态”，本次引文未覆盖该句（全文已读）。应收窄答案或补齐引用。"
+    },
+    {
+      "case_id": "T04-v2",
+      "retrieval_mode": "improved",
+      "semantic_result": "fail",
+      "reason": "删除未成功读取文档的引用后仍保留“相关材料清单、住宿标准及审批状态说明均明确不规定”的断言，只来自检索摘要，不能通过。"
+    },
+    {
+      "case_id": "T06A",
+      "retrieval_mode": "improved",
+      "semantic_result": "fail",
+      "reason": "附加“未区分工作日或设置其他例外”没有直接引文支持；原文已经限定自然日，应删除多余泛化。"
+    },
+    {
+      "case_id": "T06B",
+      "retrieval_mode": "improved",
+      "semantic_result": "fail",
+      "reason": "停止状态正确，但对其他未读取制度作确定断言，不能以搜索摘要作正式制度结论。"
+    },
+    {
+      "case_id": "T12",
+      "retrieval_mode": "improved",
+      "semantic_result": "fail",
+      "reason": "未经依据换算截止日并声称含当日；自动清理/长期保存下载来自未读取D11，D12引用不支持。关键语义缺陷。"
+    }
+  ],
+  "fix": "收紧逐句引文支持、禁止摘要充当业务依据和不必要扩写；增加无依据含当日边界校验与回归测试。完整重跑，保留原始记录。",
+  "baseline": "首轮基线自动检查3/6通过；仅为历史对照，未作为最终语义通过率。"
+}

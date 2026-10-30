@@ -1,0 +1,78 @@
+{
+  "checks": {
+    "status": false,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": false,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "insufficient_evidence",
+    "required_evidence": [],
+    "constraints": [
+      "说明资料缺少期限条款",
+      "不得回答 30、15 或 45 天",
+      "相关流程资料不能作为期限证据"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "search_docs",
+    "search_docs",
+    "read_document",
+    "read_document"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限 报销 时限 规定",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用发生之日起 自然日 工作日内提交报销",
+        "top_k": 7
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "逾期报销 不受理 财务 报销时限",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D04"
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D03"
+      }
+    }
+  ],
+  "status": "incomplete",
+  "model_turns": 6,
+  "tool_calls": 6
+}

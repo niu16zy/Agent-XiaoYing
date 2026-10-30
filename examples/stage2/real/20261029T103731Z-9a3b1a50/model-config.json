@@ -1,0 +1,7 @@
+{
+  "mode": "real",
+  "model": "deepseek-flash",
+  "endpoint": "https://api.deepseek.com",
+  "sdk_retries": 0,
+  "response_format": "json_object"
+}

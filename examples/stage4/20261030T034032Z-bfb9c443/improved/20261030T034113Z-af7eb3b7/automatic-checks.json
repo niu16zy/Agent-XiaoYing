@@ -1,0 +1,115 @@
+{
+  "checks": {
+    "status": true,
+    "budget": true,
+    "trace_complete": true,
+    "read_snapshots": true,
+    "citation_provenance": true,
+    "answered_has_citations": true,
+    "nonanswer_has_gaps": true,
+    "clarification_has_question": true,
+    "no_answered_conflicts": true,
+    "required_evidence_coverage": true
+  },
+  "automatic_pass": true,
+  "fault_outcome": "not_applicable",
+  "semantic_review": "pending",
+  "review_requirements": {
+    "status": "answered",
+    "required_facts": [
+      "30 个自然日",
+      "自费用发生之日起计算"
+    ],
+    "required_evidence": [
+      {
+        "doc_id": "D01",
+        "quote": "报销期限为 30 个自然日，自费用发生之日起计算。"
+      }
+    ],
+    "constraints": [
+      "每个改写问题独立运行",
+      "首次检索不足时允许模型改写查询",
+      "不要求固定动作顺序"
+    ]
+  },
+  "actions": [
+    "search_docs",
+    "read_document",
+    "search_docs",
+    "finish",
+    "finish"
+  ],
+  "action_details": [
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "费用报销 提交 天数 报销期限",
+        "top_k": 5
+      }
+    },
+    {
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      }
+    },
+    {
+      "action": "search_docs",
+      "arguments": {
+        "query": "报销期限 工作日 自发票日期 起算 特殊规定",
+        "top_k": 10
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "费用报销的提交期限为 30 个自然日，自费用发生之日起计算，员工须在该期限内通过费用系统提交报销申请。制度中未将期限表述为工作日，因此按自然日计算；起算点是费用发生之日，而非审批完成或款项到账之日。其他相关制度（材料清单、住宿标准、审批状态说明）均明确不规定报销提交期限，未发现与之冲突或替代的期限规则。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+            "supports": "直接规定报销提交期限为30个自然日，起算点为费用发生之日"
+          },
+          {
+            "doc_id": "D03",
+            "version_date": "2026-02-01",
+            "quote": "本清单不规定报销提交期限。",
+            "supports": "材料清单不构成另行期限规定，排除冲突"
+          },
+          {
+            "doc_id": "D05",
+            "version_date": "2026-04-01",
+            "quote": "本标准不规定费用报销的提交期限。",
+            "supports": "住宿标准不设报销期限，排除冲突"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "answer": "费用报销的提交期限为 30 个自然日，自费用发生之日起计算，员工须在该期限内通过费用系统提交报销申请。制度表述为“自然日”而非工作日，起算点为费用发生之日，而非审批完成或报销款项到账之日。相关材料清单、住宿标准及审批状态说明均明确不规定报销提交期限，未发现与之冲突或替代的期限规则。",
+        "status": "answered",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-10",
+            "quote": "报销期限为 30 个自然日，自费用发生之日起计算。员工应在该期限内通过费用系统提交报销申请。",
+            "supports": "直接规定报销提交期限为30个自然日，起算点为费用发生之日"
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "follow_up_question": null
+      }
+    }
+  ],
+  "status": "answered",
+  "model_turns": 5,
+  "tool_calls": 3
+}

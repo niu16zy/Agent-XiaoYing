@@ -1,0 +1,24 @@
+[
+  {
+    "doc_id": "D01",
+    "title": "费用报销提交规则",
+    "version_date": "2026-01-10",
+    "scope": null,
+    "supersedes": [],
+    "content": "员工通过费用系统提交报销申请。报销申请应填写费用发生日期、用途和金额。提交成功后可在费用系统查看处理状态。",
+    "start": 0,
+    "end": 53,
+    "snapshot_id": "d03ee2820a1f2928b52c0d8182fa961f8dfd0ba522a6b31b2488f984bc3effe5"
+  },
+  {
+    "doc_id": "D03",
+    "title": "费用报销材料清单",
+    "version_date": "2026-02-01",
+    "scope": "费用报销材料准备",
+    "supersedes": [],
+    "content": "申请费用报销时，必须提供发票、支付凭证和费用用途说明。出差相关费用还须附上已审批的出差申请。\n\n材料通过费用系统上传，图像应清晰，能够识别交易日期和金额。本清单不规定报销提交期限。",
+    "start": 0,
+    "end": 90,
+    "snapshot_id": "d03ee2820a1f2928b52c0d8182fa961f8dfd0ba522a6b31b2488f984bc3effe5"
+  }
+]

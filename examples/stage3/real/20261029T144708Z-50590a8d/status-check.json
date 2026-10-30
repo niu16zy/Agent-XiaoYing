@@ -1,0 +1,8 @@
+{
+  "case_id": "T06B",
+  "expected_statuses": [
+    "tool_error"
+  ],
+  "status_matches": false,
+  "semantic_review": "pending"
+}
