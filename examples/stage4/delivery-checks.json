@@ -26,7 +26,7 @@
     "src/knowledge_agent/schemas.py": "a921fbfa2769ff42ed70362652b59757b16a6ee8114c88db32fd8bfb6978e05c",
     "src/knowledge_agent/tools.py": "230258222bfa2dd4ca4fd26f3b154acb03548019eb870696f8f1a9b64271d081",
     "src/knowledge_agent/trace.py": "c52100eb914f014e0b607c9bfc5163a671ae11e40e095b3b12a454cc987b601e",
-    "src/knowledge_agent/validation.py": "71f926bfa6e7fa7a64180cb7ae892d60dd71471f179e84525e508dca582b0606"
+    "src/knowledge_agent/validation.py": "c38101875a14952d2434a887aeedea8d238340300b2d60eb727ea817856e99d4"
   },
   "latest_run_validation": [
     {
@@ -115,5 +115,6 @@
   "markdown_control_characters": [],
   "broken_document_links": [],
   "scope": "Exact configured secret values scanned in Git candidate files; no universal secret detection claim.",
-  "git_remote_check": "Three read-only attempts failed: reset/port443 unreachable; no remote history known."
+  "git_remote_check": "Initial three reads failed; later normal push succeeded: new branch main -> main; upstream configured.",
+  "updated_at": "2026-10-30T04:02:55.272744+00:00"
 }

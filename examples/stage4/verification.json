@@ -192,7 +192,12 @@
     "All cases are synthetic development cases, no held-out or repeat-run stability estimate.",
     "Citation provenance plus lexical guards are not general semantic entailment.",
     "Earlier failed outputs remain in historical batches and must not be counted as passed.",
-    "Exact total active exam time was not tracked; use recorded intervals only.",
-    "GitHub network unavailable at verification time; local completion is not remote submission."
-  ]
+    "Exact total active exam time was not tracked; use recorded intervals only."
+  ],
+  "git_delivery": {
+    "status": "pushed",
+    "branch": "main",
+    "repository": "https://github.com/niu16zy/Agent-XiaoYing",
+    "reviewer_account_access": "not independently verified"
+  }
 }

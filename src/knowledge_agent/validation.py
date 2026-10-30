@@ -64,4 +64,3 @@ def check_result(action, evidence):
     if result["status"] in {"tool_error", "incomplete", "insufficient_evidence"} and not result["gaps"]:
         raise ActionError("未完成结果必须说明资料缺口。")
     return result
-

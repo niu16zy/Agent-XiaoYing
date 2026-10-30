@@ -4,7 +4,7 @@
 
 ## 当前交付
 
-阶段一至四的本地开发与验收已完成，GitHub 上传尚未确认成功。目标仓库：[niu16zy/Agent-XiaoYing](https://github.com/niu16zy/Agent-XiaoYing)。提交状态见 [提交说明](docs/07-submission.md)。
+阶段一至四开发与验收已完成，项目已成功推送至 GitHub 的 `main` 分支。目标仓库：[niu16zy/Agent-XiaoYing](https://github.com/niu16zy/Agent-XiaoYing)。提交状态见 [提交说明](docs/07-submission.md)。
 
 - 工程测试：108 通过，1 个付费 API 测试默认跳过；完整真实验收另行执行。
 - 15 组真实模型验收的最新结果通过原文与语义复核；另有 1 组 Mock 预算测试。最新结果汇总跨完整批次和 2 例补验，不是“一轮全部成功”。
